@@ -160,10 +160,10 @@ public class LoadMaps : MonoBehaviour
             }
         }
 
-        generarCollidersInferiores(matrix);
-        generarCollidersSuperiores(matrix);
-        generarCollidersDerechos(matrix);
-        generarCollidersIzquierdos(matrix);
+        //generarCollidersInferiores(matrix);
+        //generarCollidersSuperiores(matrix);
+        //generarCollidersDerechos(matrix);
+        //generarCollidersIzquierdos(matrix);
         
     }
     // Update is called once per frame
