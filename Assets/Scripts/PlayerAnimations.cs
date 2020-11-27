@@ -5,10 +5,15 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     Rigidbody rb;
+    Material m;
+    bool animation = false;
+    Color current_color;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        m = GetComponent<Renderer>().material;
+        current_color = m.color;
     }
 
     // Update is called once per frame
@@ -22,6 +27,7 @@ public class PlayerAnimations : MonoBehaviour
 
     IEnumerator jumpAnimation()
     {
+        animation = true;
         int count = 0;
         int aux = 0;
         float speedY = rb.velocity.y;
@@ -32,14 +38,16 @@ public class PlayerAnimations : MonoBehaviour
         else if (speedY > 0 && speedX < 0) aux = 1;
         else if (speedY < 0 && speedX > 0) aux = 1;
 
-        while (count < 4) {
+        while (count < 4 && animation)
+        {
             transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, count * 10.0f * aux);
             count += 1;
 
             yield return new WaitForSeconds(0.01f);
         }
-        while (count >= 0) {
+        while (count >= 0 && animation)
+        {
             transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, count * 10.0f * aux);
             count -= 1;
@@ -54,6 +62,34 @@ public class PlayerAnimations : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        animation = false;
+        StartCoroutine("collisionAnimation");
+    }
+
+    IEnumerator collisionAnimation()
+    {
+        m.color = new Color(1.0f, 0.0f, 0.0f);
+        animation = false;
+        int count = 0;
+        float shrink = 0.05f;
+
+        while (count < 4 && !animation)
+        {
+            transform.localScale -= new Vector3(shrink, shrink, shrink);
+            count += 1;
+
+            yield return new WaitForSeconds(0.005f);
+        }
+        while (count >= 0 && !animation)
+        {
+            transform.localScale += new Vector3(shrink, shrink, shrink);
+            count -= 1;
+
+            yield return new WaitForSeconds(0.001f);
+        }
+        transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        m.color = current_color;
+
+        yield return null;
     }
 }
