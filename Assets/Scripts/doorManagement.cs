@@ -45,11 +45,15 @@ public class doorManagement : MonoBehaviour
                 break;
             }
         }
-        if (!already_in && other.CompareTag("Door"))
+        if (!already_in && (other.CompareTag("Door") || other.CompareTag("InviDoor")))
         {
             if (doors.Length == 0)
             {
                 doors = new GameObject[] { other.gameObject };
+                if (other.CompareTag("InviDoor"))
+                {
+                    other.transform.gameObject.SetActive(false);
+                }
                 //current_num_doors += 1;
             }
             else
@@ -57,6 +61,11 @@ public class doorManagement : MonoBehaviour
                 List<GameObject> aux_list = new List<GameObject>(doors);
                 aux_list.Add(other.gameObject);
                 doors = aux_list.ToArray();
+
+                if (other.CompareTag("InviDoor"))
+                {
+                    other.transform.gameObject.SetActive(false);
+                }
                 //current_num_doors += 1;
             }
         }

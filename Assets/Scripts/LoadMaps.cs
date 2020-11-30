@@ -9,6 +9,7 @@ public class LoadMaps : MonoBehaviour
     public TextAsset map;
     public GameObject Wall;
     public GameObject Door;
+    public GameObject InvisibleDoor;
     public GameObject colliderInferior, colliderSuperior, colliderIzquierdo, colliderDerecho;
     GameObject parentOfWalls;
     GameObject parentOfColliders;
@@ -38,6 +39,7 @@ public class LoadMaps : MonoBehaviour
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderInferior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
                         if (index == 2) obj.transform.tag = "Door";
+                        if (index == 3) obj.transform.tag = "InviDoor";
                         obj.transform.localScale = new Vector3(size, 1, 1);
                         obj.transform.parent = parentOfColliders.transform;
 
@@ -50,7 +52,7 @@ public class LoadMaps : MonoBehaviour
                 int size = 20 - startLine;
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderInferior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
-                if (index == 2) obj.transform.tag = "Door";
+                if (index != 1) obj.transform.tag = "Door";
                 obj.transform.localScale = new Vector3(size, 1, 1);
                 obj.transform.parent = parentOfColliders.transform;
             }
@@ -81,6 +83,7 @@ public class LoadMaps : MonoBehaviour
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderSuperior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
                         if (index == 2) obj.transform.tag = "Door";
+                        if (index == 3) obj.transform.tag = "InviDoor";
                         obj.transform.localScale = new Vector3(size, 1, 1);
                         obj.transform.parent = parentOfColliders.transform;
 
@@ -94,6 +97,7 @@ public class LoadMaps : MonoBehaviour
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderSuperior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
                 if (index == 2) obj.transform.tag = "Door";
+                if (index == 3) obj.transform.tag = "InviDoor";
                 obj.transform.localScale = new Vector3(size, 1, 1);
                 obj.transform.parent = parentOfColliders.transform;
             }
@@ -124,7 +128,7 @@ public class LoadMaps : MonoBehaviour
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderDerecho, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
                         if (index == 2) obj.transform.tag = "Door";
-                        obj.transform.localScale = new Vector3(1, size, 1);
+                        if (index == 3) obj.transform.tag = "InviDoor"; obj.transform.localScale = new Vector3(1, size, 1);
                         obj.transform.parent = parentOfColliders.transform;
 
                     }
@@ -137,7 +141,7 @@ public class LoadMaps : MonoBehaviour
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderDerecho, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
                 if (index == 2) obj.transform.tag = "Door";
-                obj.transform.localScale = new Vector3(1, size, 1);
+                if (index == 3) obj.transform.tag = "InviDoor"; obj.transform.localScale = new Vector3(1, size, 1);
                 obj.transform.parent = parentOfColliders.transform;
             }
         }
@@ -167,6 +171,7 @@ public class LoadMaps : MonoBehaviour
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderIzquierdo, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
                         if (index == 2) obj.transform.tag = "Door";
+                        if (index == 3) obj.transform.tag = "InviDoor";
                         obj.transform.localScale = new Vector3(1, size, 1);
                         obj.transform.parent = parentOfColliders.transform;
                     }
@@ -179,6 +184,7 @@ public class LoadMaps : MonoBehaviour
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderIzquierdo, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
                 if (index == 2) obj.transform.tag = "Door";
+                if (index == 3) obj.transform.tag = "InviDoor";
                 obj.transform.localScale = new Vector3(1, size, 1);
                 obj.transform.parent = parentOfColliders.transform;
             }
@@ -206,15 +212,21 @@ public class LoadMaps : MonoBehaviour
         {
             for (int j = 0; j < 20; j++)
             {
-                if (lines[i][j] == '1')
+                if (lines[i][j] == '1') // Pared
                 {
                     GameObject obj = (GameObject)Instantiate(Wall, new Vector3(-9.5f + j + map_pos.x, 5.0f - i + map_pos.y, 0.0f), transform.rotation);
                     obj.transform.parent = parentOfWalls.transform;
                     matrix[i, j] = 1;
                 }
-                else if (lines[i][j] == '2')
+                else if (lines[i][j] == '2') // Puerta inicialmente visible
                 {
                     GameObject obj = (GameObject)Instantiate(Door, new Vector3(-9.5f + j + map_pos.x, 5.0f - i + map_pos.y, 0.0f), transform.rotation);
+                    obj.transform.parent = parentOfWalls.transform;
+                    matrix[i, j] = (int)System.Char.GetNumericValue(lines[i][j]);
+                }
+                else if (lines[i][j] == '3') // Puerta inicialmente invisible
+                {
+                    GameObject obj = (GameObject)Instantiate(InvisibleDoor, new Vector3(-9.5f + j + map_pos.x, 5.0f - i + map_pos.y, 0.0f), transform.rotation);
                     obj.transform.parent = parentOfWalls.transform;
                     matrix[i, j] = (int)System.Char.GetNumericValue(lines[i][j]);
                 }
@@ -234,6 +246,11 @@ public class LoadMaps : MonoBehaviour
         generarCollidersSuperiores(matrix, 2);
         generarCollidersDerechos(matrix, 2);
         generarCollidersIzquierdos(matrix, 2);
+
+        generarCollidersInferiores(matrix, 3);
+        generarCollidersSuperiores(matrix, 3);
+        generarCollidersDerechos(matrix, 3);
+        generarCollidersIzquierdos(matrix, 3);
 
     }
     // Update is called once per frame

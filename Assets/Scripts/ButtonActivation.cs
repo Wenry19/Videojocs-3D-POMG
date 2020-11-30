@@ -34,19 +34,9 @@ public class ButtonActivation : MonoBehaviour
     }
 
     void manageDoor() {
-        if (activate)
+        for (int i = 0; i < doors.Length; i++)
         {
-            for (int i = 0; i < doors.Length; i++)
-            {
-                doors[i].SetActive(false);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < doors.Length; i++)
-            {
-                doors[i].SetActive(true);
-            }
+            doors[i].SetActive(!doors[i].activeInHierarchy); // Si la puerta esta activada la desactivara, y al reves.
         }
     }
 }
