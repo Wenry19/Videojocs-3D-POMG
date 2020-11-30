@@ -33,10 +33,10 @@ public class PlayerAnimations : MonoBehaviour
         float speedY = rb.velocity.y;
         float speedX = rb.velocity.x;
 
-        if (speedY > 0 && speedX > 0) aux = -1;
-        else if (speedY < 0 && speedX < 0) aux = -1;
-        else if (speedY > 0 && speedX < 0) aux = 1;
-        else if (speedY < 0 && speedX > 0) aux = 1;
+        if (speedY > 0 && speedX > 0) aux = 1;
+        else if (speedY < 0 && speedX < 0) aux = 1;
+        else if (speedY > 0 && speedX < 0) aux = -1;
+        else if (speedY < 0 && speedX > 0) aux = -1;
 
         while (count < 4 && animation)
         {
