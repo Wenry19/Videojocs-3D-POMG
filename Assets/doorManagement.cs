@@ -6,7 +6,7 @@ public class doorManagement : MonoBehaviour
 {
     public int num_doors;
     public GameObject[] doors;
-    int current_num_doors = 0;
+    float timer = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,43 +16,51 @@ public class doorManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (num_doors == current_num_doors) {
+        timer -= Time.deltaTime;
+        //if (num_doors == current_num_doors) {
+            
+        //    current_num_doors += 1; //para cortarlo todo
+        //    //esto antes estaba en el trigger pero no funcionaba pork para que enviase doors a ba tenia que volver a detectar trigger enter
+        //}
+        if(timer <= 0)
+        {
             ButtonActivation ba = GetComponentInParent<ButtonActivation>();
             ba.doors = doors;
-            current_num_doors += 1; //para cortarlo todo
-            //esto antes estaba en el trigger pero no funcionaba pork para que enviase doors a ba tenia que volver a detectar trigger enter
+            Destroy(gameObject);
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(doors);
+        //Debug.Log(doors);
         bool already_in = false;
-        if (current_num_doors < num_doors)
+        //if (current_num_doors < num_doors)
+        //{
+        for (int i = 0; i < doors.Length; i++)
         {
-            for (int i = 0; i < current_num_doors; i++)
+            if (doors[i].GetInstanceID() == other.GetInstanceID())
             {
-                if (doors[i].GetInstanceID() == other.GetInstanceID())
-                {
-                    already_in = true;
-                }
-            }
-            if (!already_in && other.CompareTag("Wall"))
-            {
-                if (current_num_doors == 0)
-                {
-                    doors = new GameObject[] { other.gameObject };
-                    current_num_doors += 1;
-                }
-                else
-                {
-                    List<GameObject> aux_list = new List<GameObject>(doors);
-                    aux_list.Add(other.gameObject);
-                    doors = aux_list.ToArray();
-                    current_num_doors += 1;
-                }
+                already_in = true;
+                break;
             }
         }
+        if (!already_in && other.CompareTag("Door"))
+        {
+            if (doors.Length == 0)
+            {
+                doors = new GameObject[] { other.gameObject };
+                //current_num_doors += 1;
+            }
+            else
+            {
+                List<GameObject> aux_list = new List<GameObject>(doors);
+                aux_list.Add(other.gameObject);
+                doors = aux_list.ToArray();
+                //current_num_doors += 1;
+            }
+        }
+        //}
     }
    
 }

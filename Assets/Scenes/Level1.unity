@@ -1063,7 +1063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460531614}
   m_LocalRotation: {x: -0.50000006, y: -0.50000006, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0.3, z: -0.175}
+  m_LocalPosition: {x: 0, y: 0.3, z: -0.162}
   m_LocalScale: {x: 0.039999988, y: 0.039999988, z: 0.039999988}
   m_Children: []
   m_Father: {fileID: 808686787314984711}
@@ -1080,8 +1080,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 8.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.6118689, z: 1}
+  m_Center: {x: 0.00000029135563, y: 2.444068, z: -0.00000029135558}
 --- !u!114 &1460531617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 4900000, guid: 37a152e489504bb4f864a3d1f91630f3, type: 3}
   Wall: {fileID: 1632956379749862708, guid: 8cdf4029696431f4c829a6fe76dddae3, type: 3}
+  Door: {fileID: 7141740497531589912, guid: f3c37276d5aa1594fa60bb55d7c3e364, type: 3}
   colliderInferior: {fileID: 3208115663919502753, guid: b9292ea2de1f21b40b69874d86c2935d,
     type: 3}
   colliderSuperior: {fileID: 1991868791283497910, guid: 3b4b7022a03213442a39b1ade374662a,
@@ -1308,6 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 4900000, guid: 093aebddb4873a4488589655423d1d36, type: 3}
   Wall: {fileID: 1632956379749862708, guid: 8cdf4029696431f4c829a6fe76dddae3, type: 3}
+  Door: {fileID: 7141740497531589912, guid: f3c37276d5aa1594fa60bb55d7c3e364, type: 3}
   colliderInferior: {fileID: 3208115663919502753, guid: b9292ea2de1f21b40b69874d86c2935d,
     type: 3}
   colliderSuperior: {fileID: 1991868791283497910, guid: 3b4b7022a03213442a39b1ade374662a,
