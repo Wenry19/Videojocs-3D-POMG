@@ -19,7 +19,7 @@ public class TrailManagement : MonoBehaviour
         timeToSpawn -= Time.deltaTime;
         if (timeToSpawn <= 0) {
             timeToSpawn = iniTimeToSpawn;
-            Instantiate(Trail, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+            Instantiate(Trail, new Vector3(transform.position.x, transform.position.y, transform.position.z), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
         }
     }
 }
