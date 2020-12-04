@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrailManagement : MonoBehaviour
 {
     public GameObject Trail;
-    public float iniTimeToSpawn = 0.5f;
+    public float iniTimeToSpawn;
     float timeToSpawn;
     // Start is called before the first frame update
     void Start()

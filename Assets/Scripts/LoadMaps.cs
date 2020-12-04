@@ -10,9 +10,11 @@ public class LoadMaps : MonoBehaviour
     public GameObject Wall;
     public GameObject Door;
     public GameObject InvisibleDoor;
+    public GameObject TrailDoor;
     public GameObject colliderInferior, colliderSuperior, colliderIzquierdo, colliderDerecho;
     GameObject parentOfWalls;
     GameObject parentOfColliders;
+    GameObject parentOfTrailDoors;
     // Start is called before the first frame update
     void generarCollidersInferiores(int[,] matrix, int index)
     {
@@ -38,10 +40,16 @@ public class LoadMaps : MonoBehaviour
                         int size = j - startLine;
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderInferior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
+                        obj.transform.parent = parentOfColliders.transform;
                         if (index == 2) obj.transform.tag = "Door";
                         if (index == 3) obj.transform.tag = "InviDoor";
+                        if (index == 4)
+                        {
+                            obj.transform.tag = "TrailDoor";
+                            obj.transform.parent = parentOfTrailDoors.transform;
+                        }
                         obj.transform.localScale = new Vector3(size, 1, 1);
-                        obj.transform.parent = parentOfColliders.transform;
+                        
 
                     }
                 }
@@ -52,9 +60,16 @@ public class LoadMaps : MonoBehaviour
                 int size = 20 - startLine;
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderInferior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
-                if (index != 1) obj.transform.tag = "Door";
-                obj.transform.localScale = new Vector3(size, 1, 1);
                 obj.transform.parent = parentOfColliders.transform;
+                if (index == 2) obj.transform.tag = "Door";
+                if (index == 3) obj.transform.tag = "InviDoor";
+                if (index == 4)
+                {
+                    obj.transform.tag = "TrailDoor";
+                    obj.transform.parent = parentOfTrailDoors.transform;
+                }
+                obj.transform.localScale = new Vector3(size, 1, 1);
+                
             }
         }
     }
@@ -82,10 +97,16 @@ public class LoadMaps : MonoBehaviour
                         int size = j - startLine;
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderSuperior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
+                        obj.transform.parent = parentOfColliders.transform;
                         if (index == 2) obj.transform.tag = "Door";
                         if (index == 3) obj.transform.tag = "InviDoor";
+                        if (index == 4)
+                        {
+                            obj.transform.tag = "TrailDoor";
+                            obj.transform.parent = parentOfTrailDoors.transform;
+                        }
                         obj.transform.localScale = new Vector3(size, 1, 1);
-                        obj.transform.parent = parentOfColliders.transform;
+                        
 
                     }
                 }
@@ -96,10 +117,16 @@ public class LoadMaps : MonoBehaviour
                 int size = 20 - startLine;
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderSuperior, new Vector3(-9.5f + mid + map_pos.x, 5.0f - i + map_pos.y, 0.0f), Quaternion.identity);
+                obj.transform.parent = parentOfColliders.transform;
                 if (index == 2) obj.transform.tag = "Door";
                 if (index == 3) obj.transform.tag = "InviDoor";
+                if (index == 4)
+                {
+                    obj.transform.tag = "TrailDoor";
+                    obj.transform.parent = parentOfTrailDoors.transform;
+                }
                 obj.transform.localScale = new Vector3(size, 1, 1);
-                obj.transform.parent = parentOfColliders.transform;
+                
             }
         }
     }
@@ -127,9 +154,16 @@ public class LoadMaps : MonoBehaviour
                         int size = i - startLine;
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderDerecho, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
-                        if (index == 2) obj.transform.tag = "Door";
-                        if (index == 3) obj.transform.tag = "InviDoor"; obj.transform.localScale = new Vector3(1, size, 1);
                         obj.transform.parent = parentOfColliders.transform;
+                        if (index == 2) obj.transform.tag = "Door";
+                        if (index == 3) obj.transform.tag = "InviDoor";
+                        if (index == 4)
+                        {
+                            obj.transform.tag = "TrailDoor";
+                            obj.transform.parent = parentOfTrailDoors.transform;
+                        }
+                        obj.transform.localScale = new Vector3(1, size, 1);
+                        
 
                     }
                 }
@@ -140,9 +174,15 @@ public class LoadMaps : MonoBehaviour
                 int size = 11 - startLine;
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderDerecho, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
-                if (index == 2) obj.transform.tag = "Door";
-                if (index == 3) obj.transform.tag = "InviDoor"; obj.transform.localScale = new Vector3(1, size, 1);
                 obj.transform.parent = parentOfColliders.transform;
+                if (index == 2) obj.transform.tag = "Door";
+                if (index == 3) obj.transform.tag = "InviDoor";
+                if (index == 4)
+                {
+                    obj.transform.tag = "TrailDoor";
+                    obj.transform.parent = parentOfTrailDoors.transform;
+                }
+                obj.transform.localScale = new Vector3(1, size, 1);
             }
         }
     }
@@ -170,10 +210,16 @@ public class LoadMaps : MonoBehaviour
                         int size = i - startLine;
                         float mid = (startLine + ((size - 1) / 2.0f));
                         GameObject obj = (GameObject)Instantiate(colliderIzquierdo, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
+                        obj.transform.parent = parentOfColliders.transform;
                         if (index == 2) obj.transform.tag = "Door";
                         if (index == 3) obj.transform.tag = "InviDoor";
+                        if (index == 4)
+                        {
+                            obj.transform.tag = "TrailDoor";
+                            obj.transform.parent = parentOfTrailDoors.transform;
+                        }
                         obj.transform.localScale = new Vector3(1, size, 1);
-                        obj.transform.parent = parentOfColliders.transform;
+                        
                     }
                 }
             }
@@ -183,12 +229,17 @@ public class LoadMaps : MonoBehaviour
                 int size = 11 - startLine;
                 float mid = (startLine + ((size - 1) / 2.0f));
                 GameObject obj = (GameObject)Instantiate(colliderIzquierdo, new Vector3(-9.5f + j + map_pos.x, 5.0f - mid + map_pos.y, 0.0f), Quaternion.identity);
+                obj.transform.parent = parentOfColliders.transform;
                 if (index == 2) obj.transform.tag = "Door";
                 if (index == 3) obj.transform.tag = "InviDoor";
+                if (index == 4)
+                {
+                    obj.transform.tag = "TrailDoor";
+                    obj.transform.parent = parentOfTrailDoors.transform;
+                }
                 obj.transform.localScale = new Vector3(1, size, 1);
-                obj.transform.parent = parentOfColliders.transform;
+                
             }
-
         }
     }
 
@@ -201,6 +252,10 @@ public class LoadMaps : MonoBehaviour
         parentOfColliders = new GameObject("ParentOfColliders");
         parentOfColliders.transform.position = transform.position;
         parentOfColliders.transform.parent = gameObject.transform;
+
+        parentOfTrailDoors = new GameObject("ParentOfTrailDoors");
+        parentOfTrailDoors.transform.position = transform.position;
+        parentOfTrailDoors.transform.parent = gameObject.transform;
 
 
         map_pos = transform.position;
@@ -230,6 +285,12 @@ public class LoadMaps : MonoBehaviour
                     obj.transform.parent = parentOfWalls.transform;
                     matrix[i, j] = (int)System.Char.GetNumericValue(lines[i][j]);
                 }
+                else if (lines[i][j] == '4') // Puerta inicialmente invisible
+                {
+                    GameObject obj = (GameObject)Instantiate(TrailDoor, new Vector3(-9.5f + j + map_pos.x, 5.0f - i + map_pos.y, 0.0f), transform.rotation);
+                    obj.transform.parent = parentOfTrailDoors.transform;
+                    matrix[i, j] = (int)System.Char.GetNumericValue(lines[i][j]);
+                }
                 else
                 {
                     matrix[i, j] = 0;
@@ -251,6 +312,11 @@ public class LoadMaps : MonoBehaviour
         generarCollidersSuperiores(matrix, 3);
         generarCollidersDerechos(matrix, 3);
         generarCollidersIzquierdos(matrix, 3);
+
+        generarCollidersInferiores(matrix, 4);
+        generarCollidersSuperiores(matrix, 4);
+        generarCollidersDerechos(matrix, 4);
+        generarCollidersIzquierdos(matrix, 4);
 
     }
     // Update is called once per frame
