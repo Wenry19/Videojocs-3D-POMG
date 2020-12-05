@@ -6,6 +6,7 @@ public class ButtonActivation : MonoBehaviour
 {
     bool activate = true;
     public GameObject[] doors;
+    public GameObject[] enemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,10 @@ public class ButtonActivation : MonoBehaviour
         for (int i = 0; i < doors.Length; i++)
         {
             doors[i].SetActive(!doors[i].activeInHierarchy); // Si la puerta esta activada la desactivara, y al reves.
+        }
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].SetActive(!enemies[i].activeInHierarchy); // Si la puerta esta activada la desactivara, y al reves.
         }
     }
 }

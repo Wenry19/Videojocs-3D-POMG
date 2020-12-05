@@ -8,6 +8,7 @@ TagManager:
   - Door
   - InviDoor
   - TrailDoor
+  - ParentOfTrailsObject
   layers:
   - Default
   - TransparentFX

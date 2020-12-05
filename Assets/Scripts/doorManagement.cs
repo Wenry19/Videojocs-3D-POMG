@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class doorManagement : MonoBehaviour
 {
-    public int num_doors;
     public GameObject[] doors;
     float timer = 1f;
     // Start is called before the first frame update

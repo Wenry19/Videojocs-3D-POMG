@@ -17,11 +17,13 @@ public class OpenTrailDoor : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject go = collision.gameObject;
+        GameObject traildoor = collision.gameObject;
         GameObject trail_manag = transform.GetChild(0).gameObject;
-        if (go.CompareTag("TrailDoor") && trail_manag.activeInHierarchy)
+        if (traildoor.CompareTag("TrailDoor") && trail_manag.activeInHierarchy)
         {
-            go.transform.parent.gameObject.SetActive(false); // Si la puerta esta activada la desactivara, y al reves.
+            traildoor.transform.parent.gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
+            Destroy(GameObject.FindGameObjectWithTag("ParentOfTrailsObject"));
         }
     }
 }
