@@ -243,7 +243,7 @@ public class LoadMaps : MonoBehaviour
         }
     }
 
-    void Start()
+    void Awake()
     {
         parentOfWalls = new GameObject("ParentOfWalls");
         parentOfWalls.transform.position = transform.position;

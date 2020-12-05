@@ -692,6 +692,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpikes
       objectReference: {fileID: 0}
+    - target: {fileID: 4365161867400208679, guid: fa01f285b9a0460428390b16bf4bd215,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa01f285b9a0460428390b16bf4bd215, type: 3}
 --- !u!1001 &864997034
@@ -894,7 +899,7 @@ PrefabInstance:
     - target: {fileID: 8354678395743674633, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: 8354678395743674633, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}
@@ -1536,16 +1541,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 254983188}
     m_Modifications:
-    - target: {fileID: -1538403320687875063, guid: 60c389454ea0c8f4e8304688167ee412,
-        type: 3}
-      propertyPath: A
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5168754690384002016, guid: 60c389454ea0c8f4e8304688167ee412,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6bee398fb6ed00741bbc58e586d25645, type: 2}
     - target: {fileID: 5633498291813439241, guid: 60c389454ea0c8f4e8304688167ee412,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1554,7 +1549,7 @@ PrefabInstance:
     - target: {fileID: 5633498291813439241, guid: 60c389454ea0c8f4e8304688167ee412,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 5633498291813439241, guid: 60c389454ea0c8f4e8304688167ee412,
         type: 3}
@@ -1601,20 +1596,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5633498291813439241, guid: 60c389454ea0c8f4e8304688167ee412,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7679308395887578898, guid: 60c389454ea0c8f4e8304688167ee412,
         type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7679308395887578898, guid: 60c389454ea0c8f4e8304688167ee412,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60c389454ea0c8f4e8304688167ee412, type: 3}
