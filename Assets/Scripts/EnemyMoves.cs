@@ -13,6 +13,9 @@ public class EnemyMoves : MonoBehaviour
     Behaviour enemy_behaviour;
     bool horizontal = false;
     GameObject player;
+
+    public bool moveConstantCond, followPlayerCond;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +44,10 @@ public class EnemyMoves : MonoBehaviour
         else ini_pos = new Vector3(hit1.point.x + A + transform.localScale.x / 2, transform.position.y, 0.0f);
 
         transform.position = ini_pos;
+        if(moveConstantCond)
+        enemy_behaviour += constant_move;
 
+        if (followPlayerCond)
         enemy_behaviour += follow_player;
     }
 
@@ -65,29 +71,35 @@ public class EnemyMoves : MonoBehaviour
     }
     void follow_player() {
         float aux = 0.0f;
+        float margen = 0.2f;
         if (!horizontal)
         {
-            if (player.transform.position.y > transform.position.y)
+            if (player.transform.position.y > transform.position.y + margen)
             {
                 aux = Mathf.Clamp(transform.position.y + speedY, ini_pos.y - A, ini_pos.y + A);
-                
+
             }
-            else if (player.transform.position.y < transform.position.y) {
+            else if (player.transform.position.y < transform.position.y - margen)
+            {
                 aux = Mathf.Clamp(transform.position.y - speedY, ini_pos.y - A, ini_pos.y + A);
             }
-            transform.position += new Vector3(0.0f, aux, 0.0f);
+            else aux = transform.position.y;
+
+            transform.position = new Vector3(transform.position.x, aux, 0.0f);
         }
         else
         {
-            if (player.transform.position.x > transform.position.x)
+            if (player.transform.position.x > transform.position.x + margen)
             {
                 aux = Mathf.Clamp(transform.position.x + speedX, ini_pos.x - A, ini_pos.x + A);
             }
-            else if (player.transform.position.x < transform.position.x)
+            else if (player.transform.position.x < transform.position.x - margen)
             {
                 aux = Mathf.Clamp(transform.position.x - speedX, ini_pos.x - A, ini_pos.x + A);
             }
-            transform.position += new Vector3(aux, 0.0f, 0.0f);
+            else aux = transform.position.x;
+
+            transform.position = new Vector3(aux, transform.position.y, 0.0f);
         }
     }
 }
