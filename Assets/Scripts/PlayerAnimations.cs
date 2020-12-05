@@ -64,6 +64,7 @@ public class PlayerAnimations : MonoBehaviour
     {
         animationPlayer = false;
         StartCoroutine("collisionAnimation");
+
     }
 
     IEnumerator collisionAnimation()
