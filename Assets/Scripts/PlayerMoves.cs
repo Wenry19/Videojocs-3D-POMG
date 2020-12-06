@@ -12,6 +12,10 @@ public class PlayerMoves : MonoBehaviour
     public float speedY;
     public bool horizontal_rope;
     bool spacePressed;
+    bool derecha = true;
+    bool arriba = true;
+
+    bool coliarri, coliabajo, colider, coliizqu;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -22,17 +26,47 @@ public class PlayerMoves : MonoBehaviour
         rb.angularDrag = 0;
         rb.AddForce(new Vector3(speedX, speedY, 0));
     }
-
+    public void collis(int col)
+    {
+        if (col == 0)
+        {
+            arriba = false;
+        }
+        if (col == 1)
+        {
+            arriba = true;
+        }
+        if (col == 2)
+        {
+            derecha = false;
+        }
+        if (col == 3)
+        {
+            derecha = true;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         if (player_state == state.INI)
         {
-            desatascar();
+            //desatascar();
+            float movY, movX;
+            if (arriba)
+            {
+                movY = speedY;
+            }
+            else movY = -speedY;
+            if (derecha)
+            {
+                movX = speedY;
+            }
+            else movX = -speedY;
+
+            transform.position = new Vector3(transform.position.x + movX, transform.position.y + movY, 0);
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                float ySpeed = rb.velocity.y;
-                rb.velocity = new Vector3(rb.velocity.x, -ySpeed, 0);
+                arriba = !arriba;
             }
         }
         else if (player_state == state.ROPE) {
