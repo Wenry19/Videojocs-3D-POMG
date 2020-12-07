@@ -21,10 +21,6 @@ public class PlayerMoves : MonoBehaviour
     void Start()
     {
         player_state = state.INI;
-        rb = GetComponent<Rigidbody>();
-        rb.drag = 0;
-        rb.angularDrag = 0;
-        rb.AddForce(new Vector3(speedX, speedY, 0));
     }
     public void collis(int col)
     {
@@ -100,5 +96,10 @@ public class PlayerMoves : MonoBehaviour
     public void change_state(string new_state) {
         if (new_state == "ROPE") player_state = state.ROPE;
         else if (new_state == "INI") player_state = state.INI;
+    }
+
+    public bool isTrailing()
+    {
+        return transform.GetChild(0).gameObject.activeInHierarchy;
     }
 }

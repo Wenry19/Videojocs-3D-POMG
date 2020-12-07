@@ -17,7 +17,7 @@ public class TriggerButton : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider coll)
     {
         button.collisionButton();
     }

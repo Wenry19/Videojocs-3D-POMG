@@ -15,14 +15,14 @@ public class OpenTrailDoor : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider coll)
     {
-        GameObject traildoor = collision.gameObject;
-        GameObject trail_manag = transform.GetChild(0).gameObject;
+        GameObject traildoor = coll.gameObject;
+        GameObject trail_manag = transform.parent.GetChild(0).gameObject;
         if (traildoor.CompareTag("TrailDoor") && trail_manag.activeInHierarchy)
         {
-            traildoor.transform.parent.gameObject.SetActive(false);
-            transform.GetChild(0).gameObject.SetActive(false);
+            traildoor.transform.parent.gameObject.SetActive(false); // El parent contiene todos los traildoors dels map
+            trail_manag.SetActive(false);
             Destroy(GameObject.FindGameObjectWithTag("ParentOfTrailsObject"));
         }
     }

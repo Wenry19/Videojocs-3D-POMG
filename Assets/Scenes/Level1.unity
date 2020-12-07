@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 598405829}
   m_Layer: 0
   m_Name: up
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 1298957533}
   m_Layer: 0
   m_Name: down
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6085,7 +6085,7 @@ GameObject:
   - component: {fileID: 1852244768}
   m_Layer: 0
   m_Name: izq
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6143,7 +6143,7 @@ GameObject:
   - component: {fileID: 1968424605}
   m_Layer: 0
   m_Name: der
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6276,6 +6276,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Switch
       objectReference: {fileID: 0}
+    - target: {fileID: 1393911442508216319, guid: 5e6f86eb630524d41b7c6a4ca3e05a78,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 2079595709076437990, guid: 5e6f86eb630524d41b7c6a4ca3e05a78,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6330,6 +6335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186752881976488538, guid: 5e6f86eb630524d41b7c6a4ca3e05a78,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7455495189968595634, guid: 5e6f86eb630524d41b7c6a4ca3e05a78,
         type: 3}
@@ -6511,7 +6521,7 @@ PrefabInstance:
     - target: {fileID: 3182419741042416608, guid: 15fcaae48bd27b5488405bb09fd3899f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4755264866919101954, guid: 15fcaae48bd27b5488405bb09fd3899f,
         type: 3}
@@ -6656,6 +6666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679308395887578898, guid: 60c389454ea0c8f4e8304688167ee412,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60c389454ea0c8f4e8304688167ee412, type: 3}

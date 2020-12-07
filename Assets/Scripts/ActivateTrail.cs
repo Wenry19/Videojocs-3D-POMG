@@ -19,7 +19,7 @@ public class ActivateTrail : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player")) {
-            other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            other.transform.parent.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject);
         }
     }
