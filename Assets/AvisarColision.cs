@@ -8,7 +8,7 @@ public class AvisarColision : MonoBehaviour
     // Start is called before the first frame update
     public enum state
     {
-        IZQ,DER,UP,DOWN
+        IZQ, DER, UP, DOWN
     };
     public state stado;
     void Start()
@@ -24,24 +24,20 @@ public class AvisarColision : MonoBehaviour
             if (stado == state.UP)
             {
                 GetComponentInParent<PlayerMoves>().collis(0);
-                print("arri");
             }
             if (stado == state.DOWN)
             {
                 GetComponentInParent<PlayerMoves>().collis(1);
-                print("aba");
 
             }
             if (stado == state.DER)
             {
                 GetComponentInParent<PlayerMoves>().collis(2);
-                print("der");
 
             }
             if (stado == state.IZQ)
             {
                 GetComponentInParent<PlayerMoves>().collis(3);
-                print("izq");
 
             }
         }

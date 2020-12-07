@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1210082147899125527}
   m_Layer: 0
   m_Name: spikes
-  m_TagString: Untagged
+  m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5820726391962921518, guid: 239b1048fcd95b4429550e9a7bc55008, type: 3}
+  - {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

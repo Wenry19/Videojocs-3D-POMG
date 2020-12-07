@@ -8,12 +8,14 @@ public class PlayerAnimations : MonoBehaviour
     Material m;
     bool animationPlayer = false;
     Color current_color;
+
+    PlayerMoves pm;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         m = GetComponent<Renderer>().material;
         current_color = m.color;
+        pm = GetComponent<PlayerMoves>();
     }
 
     // Update is called once per frame
@@ -21,7 +23,10 @@ public class PlayerAnimations : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine("jumpAnimation");
+            if (pm.notOnRopes())
+            {
+                StartCoroutine("jumpAnimation");
+            }
         }
     }
 
@@ -30,13 +35,12 @@ public class PlayerAnimations : MonoBehaviour
         animationPlayer = true;
         int count = 0;
         int aux = 0;
-        float speedY = rb.velocity.y;
-        float speedX = rb.velocity.x;
 
-        if (speedY > 0 && speedX > 0) aux = 1;
-        else if (speedY < 0 && speedX < 0) aux = 1;
-        else if (speedY > 0 && speedX < 0) aux = -1;
-        else if (speedY < 0 && speedX > 0) aux = -1;
+
+        if (pm.isUp() && pm.isRight()) aux = 1;
+        else if (!pm.isUp() && !pm.isRight()) aux = 1;
+        else if (pm.isUp()  && !pm.isRight()) aux = -1;
+        else if (!pm.isUp() && pm.isRight()) aux = -1;
 
         while (count < 4 && animationPlayer)
         {

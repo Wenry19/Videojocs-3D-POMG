@@ -9,6 +9,8 @@ TagManager:
   - InviDoor
   - TrailDoor
   - ParentOfTrailsObject
+  - Switch
+  - Spikes
   layers:
   - Default
   - TransparentFX

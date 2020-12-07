@@ -66,19 +66,37 @@ public class PlayerMoves : MonoBehaviour
             }
         }
         else if (player_state == state.ROPE) {
+            float movY, movX;
+            movX = movY = 0;
+            float movAdicional = 0.01f;
+
+            if (horizontal_rope)
+            {
+                if (derecha)
+                    movX = speedX + movAdicional;
+                else
+                    movX = -speedX- movAdicional;
+            }
+            else
+            {
+                if (arriba)
+                    movY = speedY + movAdicional;
+                else
+                    movY = -speedY - movAdicional;
+            }
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (horizontal_rope)
                 {
-                    float xSpeed = rb.velocity.x;
-                    rb.velocity = new Vector3(-xSpeed, 0, 0);
+                    derecha = !derecha;
                 }
                 else
                 {
-                    float ySpeed = rb.velocity.y;
-                    rb.velocity = new Vector3(0, -ySpeed, 0);
+                    arriba = !arriba;
                 }
             }
+            transform.position = new Vector3(transform.position.x + movX, transform.position.y + movY, 0);
         }
     }
 
@@ -98,8 +116,22 @@ public class PlayerMoves : MonoBehaviour
         else if (new_state == "INI") player_state = state.INI;
     }
 
+    public bool isRight()
+    {
+        return derecha;
+    }
+
+    public bool isUp()
+    {
+        return arriba;
+    }
+
     public bool isTrailing()
     {
         return transform.GetChild(0).gameObject.activeInHierarchy;
+    }
+    public bool notOnRopes()
+    {
+        return player_state != state.ROPE;
     }
 }
