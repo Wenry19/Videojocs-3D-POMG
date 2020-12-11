@@ -17,7 +17,7 @@ public class RopesManagement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "TrailDetector")
+        if (other.name == "RopeDetector")
         {
             GameObject player = other.transform.parent.gameObject;
             PlayerMoves pm = player.GetComponent<PlayerMoves>();
@@ -41,7 +41,7 @@ public class RopesManagement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "TrailDetector")
+        if (other.name == "RopeDetector")
         {
             GameObject player = other.transform.parent.gameObject;
             PlayerMoves pm = player.GetComponent<PlayerMoves>();

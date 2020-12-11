@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 702219417}
   - component: {fileID: 702219418}
   m_Layer: 0
-  m_Name: TrailDetector
+  m_Name: RopeDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,12 +1104,12 @@ PrefabInstance:
     - target: {fileID: 6327363676351424313, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}
       propertyPath: speedX
-      value: 0.0125
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6327363676351424313, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}
       propertyPath: speedY
-      value: 0.0125
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6327363676351424318, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}

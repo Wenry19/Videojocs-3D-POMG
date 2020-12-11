@@ -15,7 +15,7 @@ public class PlayerMoves : MonoBehaviour
     bool derecha = true;
     bool arriba = true;
 
-    bool coliarri, coliabajo, colider, coliizqu;
+    //bool coliarri, coliabajo, colider, coliizqu;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -44,20 +44,20 @@ public class PlayerMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float time = Time.deltaTime;
         if (player_state == state.INI)
         {
-            //desatascar();
             float movY, movX;
             if (arriba)
             {
-                movY = speedY;
+                movY = speedY * time;
             }
-            else movY = -speedY;
+            else movY = -speedY * time;
             if (derecha)
             {
-                movX = speedY;
+                movX = speedY * time;
             }
-            else movX = -speedY;
+            else movX = -speedY * time;
 
             transform.position = new Vector3(transform.position.x + movX, transform.position.y + movY, 0);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -73,16 +73,16 @@ public class PlayerMoves : MonoBehaviour
             if (horizontal_rope)
             {
                 if (derecha)
-                    movX = speedX + movAdicional;
+                    movX = (speedX + movAdicional) * time;
                 else
-                    movX = -speedX- movAdicional;
+                    movX = (-speedX- movAdicional) * time;
             }
             else
             {
                 if (arriba)
-                    movY = speedY + movAdicional;
+                    movY = (speedY + movAdicional) * time;
                 else
-                    movY = -speedY - movAdicional;
+                    movY = (-speedY - movAdicional) * time;
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
@@ -98,17 +98,6 @@ public class PlayerMoves : MonoBehaviour
             }
             transform.position = new Vector3(transform.position.x + movX, transform.position.y + movY, 0);
         }
-    }
-
-    void desatascar() {
-        float ySpeed = rb.velocity.y;
-        float xSpeed = rb.velocity.x;
-        if (ySpeed <= 0 && ySpeed != -3.75) ySpeed = -3.75f;
-        else if (ySpeed >= 0 && ySpeed != 3.75) ySpeed = 3.75f;
-        if (xSpeed <= 0 && xSpeed != -3.75) xSpeed = -3.75f;
-        else if (xSpeed >= 0 && xSpeed != 3.75) xSpeed = 3.75f;
-
-        rb.velocity = new Vector3(xSpeed, ySpeed, 0);
     }
 
     public void change_state(string new_state) {
