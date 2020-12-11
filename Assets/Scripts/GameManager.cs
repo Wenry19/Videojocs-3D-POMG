@@ -55,4 +55,10 @@ public class GameManager : MonoBehaviour
         cam = c;
     }
 
+    public void nextLevel() {
+        int i = SceneManager.GetActiveScene().buildIndex;
+        //if (i + 1 == lastlvl) { }
+        SceneManager.LoadScene(i+1);
+    }
+
 }
