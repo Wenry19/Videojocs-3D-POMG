@@ -21,6 +21,7 @@ public class PlayerMoves : MonoBehaviour
     void Start()
     {
         player_state = state.INI;
+        GameManager.Instance.setPlayer(gameObject);
     }
     public void collis(int col)
     {

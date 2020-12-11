@@ -16,9 +16,22 @@ public class AvisarColision : MonoBehaviour
         pm = transform.GetComponentInParent<PlayerMoves>();
     }
 
+    void managePlayerLives(Collider coll)
+    {
+        if (coll.CompareTag("Spikes"))
+        {
+            GameManager.Instance.goCheckPoint();
+        }
+        else if (coll.CompareTag("CheckPoint"))
+        {
+            GameManager.Instance.setCheckPoint(coll.transform.position);
+        }
+    }
     // Update is called once per frame
     private void OnTriggerEnter(Collider coll)
     {
+        managePlayerLives(coll);
+
         if (coll.CompareTag("Wall") || coll.CompareTag("Door") || coll.CompareTag("Switch") || (coll.CompareTag("TrailDoor") && !pm.isTrailing()))
         {
             if (stado == state.UP)
@@ -42,4 +55,5 @@ public class AvisarColision : MonoBehaviour
             }
         }
     }
+
 }

@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return _instance; } }
 
+    Vector3 posCheckPoint;
+    Vector3 posCheckPointCam;
+    GameObject player;
+    GameObject cam;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -24,10 +29,30 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SceneManager.LoadScene(1);
+        posCheckPoint = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
     public void hola()
     {
         print("hi");
     }
+
+    public void setCheckPoint(Vector3 pos) {
+        posCheckPoint = pos;
+        posCheckPointCam = Camera.main.transform.position;
+    }
+
+    public void goCheckPoint() {
+        player.transform.position = posCheckPoint;
+        cam.transform.position = posCheckPointCam;
+    }
+
+    public void setPlayer(GameObject p) {
+        player = p;
+    }
+
+    public void setCam(GameObject c) {
+        cam = c;
+    }
+
 }

@@ -11,6 +11,8 @@ TagManager:
   - ParentOfTrailsObject
   - Switch
   - Spikes
+  - CheckPoint
+  - Win
   layers:
   - Default
   - TransparentFX
