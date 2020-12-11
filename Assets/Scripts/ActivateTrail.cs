@@ -20,6 +20,7 @@ public class ActivateTrail : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) {
             other.transform.parent.GetChild(0).gameObject.SetActive(true);
+            other.transform.parent.GetComponent<TrailRenderer>().enabled = true;
             Destroy(gameObject);
         }
     }

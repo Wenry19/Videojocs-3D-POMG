@@ -22,7 +22,7 @@ public class TriggerTrail : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && can_kill) {
-            //other.gameObject.SetActive(false);
+            //other.gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
 }
