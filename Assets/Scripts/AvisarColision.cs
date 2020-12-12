@@ -5,6 +5,8 @@ using UnityEngine;
 public class AvisarColision : MonoBehaviour
 {
     PlayerMoves pm;
+    PlayerAnimations pa;
+    float timer;
     // Start is called before the first frame update
     public enum state
     {
@@ -14,6 +16,12 @@ public class AvisarColision : MonoBehaviour
     void Start()
     {
         pm = transform.GetComponentInParent<PlayerMoves>();
+        pa = transform.GetComponentInParent<PlayerAnimations>();
+        timer = 0f;
+    }
+    public void Update()
+    {
+        timer -= Time.deltaTime;
     }
 
     void managePlayerLives(Collider coll)
@@ -34,12 +42,13 @@ public class AvisarColision : MonoBehaviour
     private void OnTriggerEnter(Collider coll)
     {
         managePlayerLives(coll);
-
+        if(timer <= 0)
         if (coll.CompareTag("Wall") || (coll.CompareTag("Door") && coll.name[0]!='C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
             coll.CompareTag("Switch") || (coll.CompareTag("InviDoor") && coll.name[0] != 'C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
             (coll.CompareTag("TrailDoor") && !pm.isTrailing()))
         {
             GameManager.Instance.playColli();
+            pa.callCollisionAnimation();
             if (stado == state.UP)
             {
                 print("Arriba");
@@ -66,6 +75,7 @@ public class AvisarColision : MonoBehaviour
                 GetComponentInParent<PlayerMoves>().collis(3);
 
             }
+                timer = 0.1f;
         }
     }
 

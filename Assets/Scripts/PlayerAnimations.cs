@@ -67,13 +67,18 @@ public class PlayerAnimations : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         animationPlayer = false;
-        StartCoroutine("collisionAnimation");
+        
 
     }
-
-    IEnumerator collisionAnimation()
+    public void callCollisionAnimation()
+    {
+        StartCoroutine("collisionAnimation");
+        StartCoroutine("collisionAnimation");
+    }
+    public IEnumerator collisionAnimation()
     {
         m.color = new Color(1.0f, 0.0f, 0.0f);
+        transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         animationPlayer = false;
         int count = 0;
         float shrink = 0.05f;
@@ -83,7 +88,7 @@ public class PlayerAnimations : MonoBehaviour
             transform.localScale -= new Vector3(shrink, shrink, shrink);
             count += 1;
 
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.05f);
         }
         while (count >= 0 && !animationPlayer)
         {
