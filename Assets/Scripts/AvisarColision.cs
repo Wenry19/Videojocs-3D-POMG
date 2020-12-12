@@ -38,20 +38,27 @@ public class AvisarColision : MonoBehaviour
         {
             if (stado == state.UP)
             {
+                print("Arriba");
                 GetComponentInParent<PlayerMoves>().collis(0);
             }
             if (stado == state.DOWN)
             {
+                print("aba");
+
                 GetComponentInParent<PlayerMoves>().collis(1);
 
             }
             if (stado == state.DER)
             {
+                print("der");
+
                 GetComponentInParent<PlayerMoves>().collis(2);
 
             }
             if (stado == state.IZQ)
             {
+                print("izq");
+
                 GetComponentInParent<PlayerMoves>().collis(3);
 
             }

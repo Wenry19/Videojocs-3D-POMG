@@ -60,5 +60,11 @@ public class GameManager : MonoBehaviour
         //if (i + 1 == lastlvl) { }
         SceneManager.LoadScene(i+1);
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            goCheckPoint();
+        }
+    }
 }

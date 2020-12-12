@@ -30,7 +30,7 @@ public class CamTransition : MonoBehaviour
     }
 
     IEnumerator transition() {
-        while (Vector3.Distance(cam.transform.position, cam_pos) > 0)
+        while (Vector3.Distance(cam.transform.position, cam_pos) > 0.001)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, cam_pos, speed);
             yield return new WaitForSeconds(0.01f);
