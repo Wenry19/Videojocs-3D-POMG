@@ -20,11 +20,14 @@ public class AvisarColision : MonoBehaviour
     {
         if (coll.CompareTag("Spikes"))
         {
+            GameManager.Instance.playSound("Explosion");
             GameManager.Instance.goCheckPoint();
         }
         else if (coll.CompareTag("CheckPoint"))
         {
+            GameManager.Instance.playSound("Checkpoint");
             GameManager.Instance.setCheckPoint(coll.transform.position);
+            Destroy(coll.gameObject);
         }
     }
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class AvisarColision : MonoBehaviour
             coll.CompareTag("Switch") || (coll.CompareTag("InviDoor") && coll.name[0] != 'C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
             (coll.CompareTag("TrailDoor") && !pm.isTrailing()))
         {
+            GameManager.Instance.playColli();
             if (stado == state.UP)
             {
                 print("Arriba");

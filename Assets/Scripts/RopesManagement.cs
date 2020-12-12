@@ -17,8 +17,10 @@ public class RopesManagement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.name == "RopeDetector")
         {
+            GameManager.Instance.startRope();
             GameObject player = other.transform.parent.gameObject;
             PlayerMoves pm = player.GetComponent<PlayerMoves>();
 
@@ -43,6 +45,8 @@ public class RopesManagement : MonoBehaviour
     {
         if (other.name == "RopeDetector")
         {
+            GameManager.Instance.stopRope();
+
             GameObject player = other.transform.parent.gameObject;
             PlayerMoves pm = player.GetComponent<PlayerMoves>();
             pm.change_state("INI");

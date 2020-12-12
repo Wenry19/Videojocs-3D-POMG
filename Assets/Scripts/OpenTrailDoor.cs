@@ -22,6 +22,8 @@ public class OpenTrailDoor : MonoBehaviour
         GameObject player = transform.parent.gameObject;
         if (traildoor.CompareTag("TrailDoor") && trail_manag.activeInHierarchy)
         {
+            GameManager.Instance.playSound("Open");
+
             traildoor.transform.parent.gameObject.SetActive(false); // El parent contiene todos los traildoors dels map
             trail_manag.SetActive(false);
             player.GetComponent<TrailRenderer>().enabled = false;

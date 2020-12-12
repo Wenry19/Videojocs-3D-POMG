@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     Vector3 posCheckPointCam;
     GameObject player;
     GameObject cam;
-
+    AudioManager am;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -28,13 +28,29 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        am = GetComponent<AudioManager>();
         SceneManager.LoadScene(1);
         posCheckPoint = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
-    public void hola()
+
+    public void playSound(string s)
     {
-        print("hi");
+        am.playSound(s);
+    }
+    public void startRope()
+    {
+        am.startRope();
+    }
+
+    public void stopRope()
+    {
+        am.stopRope();
+    }
+
+    public void playColli()
+    {
+        am.playColli();
     }
 
     public void setCheckPoint(Vector3 pos) {
@@ -57,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void nextLevel() {
         int i = SceneManager.GetActiveScene().buildIndex;
-        //if (i + 1 == lastlvl) { }
+        am.nextLevel(i);
         SceneManager.LoadScene(i+1);
     }
     private void Update()

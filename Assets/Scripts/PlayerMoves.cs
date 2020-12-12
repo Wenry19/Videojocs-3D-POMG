@@ -63,6 +63,7 @@ public class PlayerMoves : MonoBehaviour
             transform.position = new Vector3(transform.position.x + movX, transform.position.y + movY, 0);
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                GameManager.Instance.playSound("Space");
                 arriba = !arriba;
             }
         }
@@ -88,6 +89,7 @@ public class PlayerMoves : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                GameManager.Instance.playSound("Space");
                 if (horizontal_rope)
                 {
                     derecha = !derecha;
