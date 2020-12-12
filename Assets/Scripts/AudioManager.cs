@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
         sounds["Checkpoint"] = soundsArray[1];
         sounds["Open"] = soundsArray[2];
         sounds["Rope"] = soundsArray[3];
-        sounds["Tecla"] = soundsArray[4];
+        sounds["Teclas"] = soundsArray[4];
         sounds["Explosion"] = soundsArray[5];
         sounds["WinLevel"] = soundsArray[6];
         sounds["WinGame"] = soundsArray[7];
