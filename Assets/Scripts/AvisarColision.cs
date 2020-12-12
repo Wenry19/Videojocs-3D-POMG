@@ -23,7 +23,10 @@ public class AvisarColision : MonoBehaviour
     {
         timer -= Time.deltaTime;
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        managePlayerLives(other);
+    }
     void managePlayerLives(Collider coll)
     {
         if (coll.CompareTag("Spikes"))
@@ -40,44 +43,41 @@ public class AvisarColision : MonoBehaviour
     }
 
     // Update is called once per frame
-    //private void OnTriggerEnter(Collider coll)
-    //{
-    //    managePlayerLives(coll);
-    //    if(timer <= 0)
-    //    if (coll.CompareTag("Wall") || (coll.CompareTag("Door") && coll.name[0]!='C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
-    //        coll.CompareTag("Switch") || (coll.CompareTag("InviDoor") && coll.name[0] != 'C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
-    //        (coll.CompareTag("TrailDoor") && !pm.isTrailing()))
-    //    {
-    //        GameManager.Instance.playColli();
-    //        pa.callCollisionAnimation();
-    //        if (stado == state.UP)
-    //        {
-    //            print("Arriba");
-    //            GetComponentInParent<PlayerMoves>().collis(0);
-    //        }
-    //        if (stado == state.DOWN)
-    //        {
-    //            print("aba");
+    //if(timer <= 0)
+        //    if (coll.CompareTag("Wall") || (coll.CompareTag("Door") && coll.name[0]!='C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
+        //        coll.CompareTag("Switch") || (coll.CompareTag("InviDoor") && coll.name[0] != 'C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
+        //        (coll.CompareTag("TrailDoor") && !pm.isTrailing()))
+        //    {
+        //        GameManager.Instance.playColli();
+        //        pa.callCollisionAnimation();
+        //        if (stado == state.UP)
+        //        {
+        //            print("Arriba");
+        //            GetComponentInParent<PlayerMoves>().collis(0);
+        //        }
+        //        if (stado == state.DOWN)
+        //        {
+        //            print("aba");
 
-    //            GetComponentInParent<PlayerMoves>().collis(1);
+        //            GetComponentInParent<PlayerMoves>().collis(1);
 
-    //        }
-    //        if (stado == state.DER)
-    //        {
-    //            print("der");
+        //        }
+        //        if (stado == state.DER)
+        //        {
+        //            print("der");
 
-    //            GetComponentInParent<PlayerMoves>().collis(2);
+        //            GetComponentInParent<PlayerMoves>().collis(2);
 
-    //        }
-    //        if (stado == state.IZQ)
-    //        {
-    //            print("izq");
+        //        }
+        //        if (stado == state.IZQ)
+        //        {
+        //            print("izq");
 
-    //            GetComponentInParent<PlayerMoves>().collis(3);
+        //            GetComponentInParent<PlayerMoves>().collis(3);
 
-    //        }
-    //            timer = 0.1f;
-    //    }
-    //}
+        //        }
+        //            timer = 0.1f;
+        //    }
+        //}
 
-}
+    }
