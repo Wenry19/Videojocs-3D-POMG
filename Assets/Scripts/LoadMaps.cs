@@ -285,7 +285,7 @@ public class LoadMaps : MonoBehaviour
                     obj.transform.parent = parentOfWalls.transform;
                     matrix[i, j] = (int)System.Char.GetNumericValue(lines[i][j]);
                 }
-                else if (lines[i][j] == '4') // Puerta inicialmente invisible
+                else if (lines[i][j] == '4') // Puerta trail
                 {
                     GameObject obj = (GameObject)Instantiate(TrailDoor, new Vector3(-9.5f + j + map_pos.x, 5.0f - i + map_pos.y, 0.0f), transform.rotation);
                     obj.transform.parent = parentOfTrailDoors.transform;
@@ -303,15 +303,15 @@ public class LoadMaps : MonoBehaviour
         generarCollidersDerechos(matrix, 1);
         generarCollidersIzquierdos(matrix, 1);
 
-        generarCollidersInferiores(matrix, 2);
-        generarCollidersSuperiores(matrix, 2);
-        generarCollidersDerechos(matrix, 2);
-        generarCollidersIzquierdos(matrix, 2);
+        //generarCollidersInferiores(matrix, 2);
+        //generarCollidersSuperiores(matrix, 2);
+        //generarCollidersDerechos(matrix, 2);
+        //generarCollidersIzquierdos(matrix, 2);
 
-        generarCollidersInferiores(matrix, 3);
-        generarCollidersSuperiores(matrix, 3);
-        generarCollidersDerechos(matrix, 3);
-        generarCollidersIzquierdos(matrix, 3);
+        //generarCollidersInferiores(matrix, 3);
+        //generarCollidersSuperiores(matrix, 3);
+        //generarCollidersDerechos(matrix, 3);
+        //generarCollidersIzquierdos(matrix, 3);
 
         generarCollidersInferiores(matrix, 4);
         generarCollidersSuperiores(matrix, 4);

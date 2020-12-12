@@ -144,92 +144,91 @@ public class RaysManage : MonoBehaviour
         }
     }
 
-//esquinas
-void checkCollLeftUp()
-{
-    for (int i = 0; i < raysLeftUp.Count; i++)
+    //esquinas
+    void checkCollLeftUp()
     {
-        Debug.DrawRay(transform.GetChild(10).transform.GetChild(i).transform.position, Vector3.left + Vector3.up, Color.blue);
-        raysLeftUp[i] = new Ray(transform.GetChild(10).transform.GetChild(i).transform.position, Vector3.left + Vector3.up);
-        if (Physics.Raycast(raysLeftUp[i], out hit))
+        for (int i = 0; i < raysLeftUp.Count; i++)
         {
-            //print("left_dist: " + hit.distance);
-            if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
+            Debug.DrawRay(transform.GetChild(10).transform.GetChild(0).transform.position, Vector3.left + Vector3.up, Color.blue);
+            raysLeftUp[i] = new Ray(transform.GetChild(10).transform.GetChild(i).transform.position, Vector3.left + Vector3.up);
+            if (Physics.Raycast(raysLeftUp[i], out hit))
             {
-                //print("left");
-                pm.collis(0);
-                pm.collis(3);
-                break;
-            }
-        }
-    }
-}
-void checkCollRightUp()
-{
-    for (int i = 0; i < raysRightUp.Count; i++)
-    {
-        Debug.DrawRay(transform.GetChild(11).transform.GetChild(i).transform.position, Vector3.right + Vector3.up, Color.blue);
-        raysRightUp[i] = new Ray(transform.GetChild(11).transform.GetChild(i).transform.position, Vector3.right + Vector3.up);
-        if (Physics.Raycast(raysRightUp[i], out hit))
-        {
-            //print("left_dist: " + hit.distance);
-            if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
-            {
-                //print("left");
-                pm.collis(0);
-                pm.collis(2);
-                break;
-            }
-        }
-    }
-}
-
-void checkCollLeftDown()
-{
-    for (int i = 0; i < raysLeftDown.Count; i++)
-    {
-        Debug.DrawRay(transform.GetChild(12).transform.GetChild(i).transform.position, Vector3.left + Vector3.down, Color.blue);
-        raysLeftDown[i] = new Ray(transform.GetChild(12).transform.GetChild(i).transform.position, Vector3.left + Vector3.down);
-        if (Physics.Raycast(raysLeftDown[i], out hit))
-        {
-            //print("left_dist: " + hit.distance);
-            if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
-            {
+                //print("left_dist: " + hit.distance);
+                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
+                {
                     //print("left");
-                pm.collis(1);
-                pm.collis(3);
-                break;
+                    pm.collis(0);
+                    pm.collis(3);
+                    break;
+                }
             }
         }
     }
-}
-
-void checkCollRightDown()
-{
-    for (int i = 0; i < raysRightDown.Count; i++)
+    void checkCollRightUp()
     {
-        Debug.DrawRay(transform.GetChild(13).transform.GetChild(i).transform.position, Vector3.right + Vector3.down, Color.blue);
-        raysRightDown[i] = new Ray(transform.GetChild(13).transform.GetChild(i).transform.position, Vector3.right + Vector3.down);
-        if (Physics.Raycast(raysRightDown[i], out hit))
+        for (int i = 0; i < raysRightUp.Count; i++)
         {
-            //print("left_dist: " + hit.distance);
-            if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
-                (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
+            Debug.DrawRay(transform.GetChild(11).transform.GetChild(0).transform.position, Vector3.right + Vector3.up, Color.blue);
+            raysRightUp[i] = new Ray(transform.GetChild(11).transform.GetChild(i).transform.position, Vector3.right + Vector3.up);
+            if (Physics.Raycast(raysRightUp[i], out hit))
             {
-                //print("left");
-                pm.collis(1);
-                pm.collis(2);
-                break;
+                //print("left_dist: " + hit.distance);
+                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
+                {
+                    //print("left");
+                    pm.collis(0);
+                    pm.collis(2);
+                    break;
+                }
             }
         }
     }
-}
 
+    void checkCollLeftDown()
+    {
+        for (int i = 0; i < raysLeftDown.Count; i++)
+        {
+            Debug.DrawRay(transform.GetChild(12).transform.GetChild(0).transform.position, Vector3.left + Vector3.down, Color.blue);
+            raysLeftDown[i] = new Ray(transform.GetChild(12).transform.GetChild(i).transform.position, Vector3.left + Vector3.down);
+            if (Physics.Raycast(raysLeftDown[i], out hit))
+            {
+                //print("left_dist: " + hit.distance);
+                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
+                {
+                        //print("left");
+                    pm.collis(1);
+                    pm.collis(3);
+                    break;
+                }
+            }
+        }
+    }
+
+    void checkCollRightDown()
+    {
+        for (int i = 0; i < raysRightDown.Count; i++)
+        {
+            Debug.DrawRay(transform.GetChild(13).transform.GetChild(0).transform.position, Vector3.right + Vector3.down, Color.blue);
+            raysRightDown[i] = new Ray(transform.GetChild(13).transform.GetChild(i).transform.position, Vector3.right + Vector3.down);
+            if (Physics.Raycast(raysRightDown[i], out hit))
+            {
+                //print("left_dist: " + hit.distance);
+                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                    (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
+                {
+                    //print("left");
+                    pm.collis(1);
+                    pm.collis(2);
+                    break;
+                }
+            }
+        }
+    }
 }
