@@ -32,7 +32,9 @@ public class AvisarColision : MonoBehaviour
     {
         managePlayerLives(coll);
 
-        if (coll.CompareTag("Wall") || coll.CompareTag("Door") || coll.CompareTag("Switch") || (coll.CompareTag("TrailDoor") && !pm.isTrailing()))
+        if (coll.CompareTag("Wall") || (coll.CompareTag("Door") && coll.name[0]!='C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
+            coll.CompareTag("Switch") || (coll.CompareTag("InviDoor") && coll.name[0] != 'C' && coll.gameObject.GetComponent<Renderer>().enabled) || 
+            (coll.CompareTag("TrailDoor") && !pm.isTrailing()))
         {
             if (stado == state.UP)
             {

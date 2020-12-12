@@ -6,6 +6,7 @@ public class ButtonActivation : MonoBehaviour
 {
     bool activate = true;
     public GameObject[] doors;
+    public GameObject[] colliders;
     public GameObject[] enemies;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class ButtonActivation : MonoBehaviour
 
     public void collisionButton()
     {
+        Debug.Log(colliders);
+        Debug.Log(doors);
         manageDoor();
         if (activate)
         {
@@ -37,8 +40,16 @@ public class ButtonActivation : MonoBehaviour
     void manageDoor() {
         for (int i = 0; i < doors.Length; i++)
         {
-            doors[i].SetActive(!doors[i].activeInHierarchy); // Si la puerta esta activada la desactivara, y al reves.
+            Renderer render = doors[i].gameObject.GetComponentInChildren<Renderer>();// que la pasa?
+
+            render.enabled = !render.enabled;
         }
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            colliders[i].SetActive(!colliders[i].activeInHierarchy); // Si la puerta esta activada la desactivara, y al reves.
+        }
+
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].SetActive(!enemies[i].activeInHierarchy); // Si la puerta esta activada la desactivara, y al reves.

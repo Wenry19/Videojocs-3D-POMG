@@ -5,6 +5,8 @@ using UnityEngine;
 public class doorManagement : MonoBehaviour
 {
     public GameObject[] doors;
+    public GameObject[] colliders;
+
     float timer = 1f;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class doorManagement : MonoBehaviour
         {
             ButtonActivation ba = GetComponentInParent<ButtonActivation>();
             ba.doors = doors;
+            ba.colliders = colliders;
             Destroy(gameObject);
         }
         
@@ -36,36 +39,78 @@ public class doorManagement : MonoBehaviour
         bool already_in = false;
         //if (current_num_doors < num_doors)
         //{
-        for (int i = 0; i < doors.Length; i++)
+        if (other.name[0] != 'C')
         {
-            if (doors[i].GetInstanceID() == other.GetInstanceID())
+            for (int i = 0; i < doors.Length; i++)
             {
-                already_in = true;
-                break;
+                if (doors[i].GetInstanceID() == other.GetInstanceID())
+                {
+                    already_in = true;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].GetInstanceID() == other.GetInstanceID())
+                {
+                    already_in = true;
+                    break;
+                }
             }
         }
         if (!already_in && (other.CompareTag("Door") || other.CompareTag("InviDoor")))
         {
-            if (doors.Length == 0)
+                    //Debug.Log(other.name);
+            if (other.name[0] != 'C')
             {
-                doors = new GameObject[] { other.gameObject };
-                if (other.CompareTag("InviDoor"))
+                if (doors.Length == 0)
                 {
-                    other.transform.gameObject.SetActive(false);
+
+                    doors = new GameObject[] { other.gameObject };
+                    if (other.CompareTag("InviDoor"))
+                    {
+                        Renderer rendFather = other.GetComponent<Renderer>();
+                        Renderer rendChild = other.GetComponentInChildren<Renderer>();
+                        
+                        rendFather.enabled = false;
+                        rendChild.enabled = true;
+                    }
                 }
-                //current_num_doors += 1;
+
+                else
+                {
+                    //Debug.Log(doors.Length);
+
+                    List<GameObject> aux_list = new List<GameObject>(doors);
+                    aux_list.Add(other.gameObject);
+                    doors = aux_list.ToArray();
+
+                    if (other.CompareTag("InviDoor"))
+                    {
+                        Renderer rendFather = other.gameObject.GetComponentInChildren<Renderer>();
+                        Renderer rendChild = other.transform.GetChild(0).GetComponentInChildren<Renderer>();
+
+                        rendFather.enabled = false;
+                        rendChild.enabled = true;
+                    }
+                }
             }
             else
             {
-                List<GameObject> aux_list = new List<GameObject>(doors);
-                aux_list.Add(other.gameObject);
-                doors = aux_list.ToArray();
-
-                if (other.CompareTag("InviDoor"))
+                if (colliders.Length == 0)
                 {
-                    other.transform.gameObject.SetActive(false);
+                    colliders = new GameObject[] { other.gameObject };
                 }
-                //current_num_doors += 1;
+
+                else
+                {
+                    List<GameObject> aux_colli_list = new List<GameObject>(colliders);
+                    aux_colli_list.Add(other.gameObject);
+                    colliders = aux_colli_list.ToArray();
+                }
             }
         }
         //}
