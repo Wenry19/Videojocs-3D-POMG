@@ -78,7 +78,7 @@ public class PlayerMoves : MonoBehaviour
         else if (player_state == state.ROPE) {
             float movY, movX;
             movX = movY = 0;
-            float movAdicional = 0.01f;
+            float movAdicional = 1f;
 
             if (horizontal_rope)
             {

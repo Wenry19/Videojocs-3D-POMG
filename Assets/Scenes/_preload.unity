@@ -784,11 +784,9 @@ MonoBehaviour:
   music:
   - {fileID: 8300000, guid: 3491f00f96d923144ac1a34e4648ef32, type: 3}
   - {fileID: 8300000, guid: f5e8be39413da4b49a8a56d0785ee6ea, type: 3}
-  - {fileID: 8300000, guid: eb67d37e683f21a47bfe2963d207d87b, type: 3}
   - {fileID: 8300000, guid: 9b81b986db6d08943b6dc9ae39e8f846, type: 3}
-  - {fileID: 8300000, guid: 98e81f9b516af924eb6e92250af15853, type: 3}
   - {fileID: 8300000, guid: 7e87e151609d09f4bb071864a60056ae, type: 3}
-  - {fileID: 8300000, guid: f81e694d62ae88a41aebd5249455bcb6, type: 3}
+  - {fileID: 8300000, guid: 98e81f9b516af924eb6e92250af15853, type: 3}
   - {fileID: 8300000, guid: 3c429b84c45d5c345bd5e6fde675eb64, type: 3}
   soundsArray:
   - {fileID: 8300000, guid: 98a5cdaabb9f90b4fbe9e7adeef0eea3, type: 3}
