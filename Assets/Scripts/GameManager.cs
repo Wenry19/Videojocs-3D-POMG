@@ -11,9 +11,11 @@ public class GameManager : MonoBehaviour
 
     Vector3 posCheckPoint;
     Vector3 posCheckPointCam;
+    Vector3 posFirstCamera;
     GameObject player;
     GameObject cam;
     AudioManager am;
+    bool firstTimeInLevel;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -28,12 +30,44 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        firstTimeInLevel = true;
         am = GetComponent<AudioManager>();
         SceneManager.LoadScene(1);
         posCheckPoint = new Vector3(0.0f, 0.0f, 0.0f);
         posCheckPointCam = new Vector3(0f, 0f, -10f);
     }
+    public void levelVisTransition()
+    {
+        if (firstTimeInLevel)
+        {
+            cam = Camera.main.gameObject;
+            StartCoroutine("startVisTransition");
+        }
+    }
 
+    IEnumerator startVisTransition()
+    {
+        cam.transform.position = posFirstCamera;
+        Vector3 finalPos = new Vector3(0, 0, -10f);
+        float speed = 0.1f;
+        yield return new WaitForSeconds(3f);
+
+        while (Vector3.Distance(cam.transform.position, finalPos) > 0.001)
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, finalPos, speed);
+            yield return new WaitForSeconds(0.01f);
+        }
+        firstTimeInLevel = false;
+        yield return null;
+    }
+    public void setFirstCameraPos(Vector3 pos)
+    {
+        posFirstCamera = pos;
+    }
+    public bool getFirstTimeInLevel()
+    {
+        return firstTimeInLevel;
+    }
     public void stopMusic()
     {
         am.stopMusic();

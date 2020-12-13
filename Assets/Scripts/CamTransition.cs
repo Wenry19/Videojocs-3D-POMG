@@ -7,19 +7,24 @@ public class CamTransition : MonoBehaviour
     public Camera cam;
     public Vector3 cam_pos;
     public float speed;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
         cam_pos = transform.GetChild(0).transform.position;
-
+        timer = 5f;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            transform.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
