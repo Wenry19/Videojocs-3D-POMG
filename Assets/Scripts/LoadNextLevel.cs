@@ -19,7 +19,9 @@ public class LoadNextLevel : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player")) {
+            //other.transform.parent.GetComponent<WinAnimation>().win(transform.position);
             GameManager.Instance.playSound("WinLevel");
+            //GameManager
             GameManager.Instance.nextLevel();
         }
     }

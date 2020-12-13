@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         am = GetComponent<AudioManager>();
         SceneManager.LoadScene(1);
         posCheckPoint = new Vector3(0.0f, 0.0f, 0.0f);
+        posCheckPointCam = new Vector3(0f, 0f, -10f);
     }
 
 
@@ -59,6 +60,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void goCheckPoint() {
+        player.GetComponent<MeshRenderer>().enabled = true;
+        player.GetComponent<PlayerMoves>().enabled = true;
+        player.GetComponent<PlayerAnimations>().enabled = true;
+        player.GetComponent<RaysManage>().enabled = true;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         player.transform.position = posCheckPoint;
         cam.transform.position = posCheckPointCam;
     }
@@ -69,6 +77,15 @@ public class GameManager : MonoBehaviour
 
     public void setCam(GameObject c) {
         cam = c;
+    }
+
+    public Vector3 getCheckPointPosition()
+    {
+        return posCheckPoint;
+    }
+    public Vector3 getCamPosition()
+    {
+        return posCheckPointCam;
     }
 
     public void nextLevel() {

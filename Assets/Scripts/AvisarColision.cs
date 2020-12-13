@@ -61,7 +61,8 @@ public class AvisarColision : MonoBehaviour
         if (coll.CompareTag("Spikes"))
         {
             GameManager.Instance.playSound("Explosion");
-            GameManager.Instance.goCheckPoint();
+            StartCoroutine("animacionMuerte");
+           
         }
         else if (coll.CompareTag("CheckPoint"))
         {
@@ -70,7 +71,21 @@ public class AvisarColision : MonoBehaviour
             Destroy(coll.gameObject);
         }
     }
+    IEnumerator animacionMuerte()
+    {
+        GameObject player = transform.parent.gameObject;
+        player.GetComponent<MeshRenderer>().enabled = false;
+        player.GetComponent<PlayerMoves>().enabled = false;
+        player.GetComponent<PlayerAnimations>().enabled = false;
+        player.GetComponent<RaysManage>().enabled = false;
 
+        GameObject particles = player.transform.GetChild(2).gameObject;
+        particles.SetActive(true);
+        yield return new WaitForSeconds(2);
+        particles.SetActive(false);
+        GameManager.Instance.goCheckPoint();
+
+    }
     // Update is called once per frame
     //if(timer <= 0)
         //    if (coll.CompareTag("Wall") || (coll.CompareTag("Door") && coll.name[0]!='C' && coll.gameObject.GetComponent<Renderer>().enabled) || 

@@ -22,6 +22,7 @@ public class PlayerMoves : MonoBehaviour
     {
         player_state = state.INI;
         GameManager.Instance.setPlayer(gameObject);
+        transform.position = GameManager.Instance.getCheckPointPosition();
     }
     public void collis(int col)
     {
