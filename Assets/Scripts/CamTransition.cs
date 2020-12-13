@@ -30,16 +30,27 @@ public class CamTransition : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) {
+            StopCoroutine("transition");
             StartCoroutine("transition");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StopCoroutine("transition");
         }
     }
 
     IEnumerator transition() {
-        while (Vector3.Distance(cam.transform.position, cam_pos) > 0.001)
+        int count = 150;
+        while (Vector3.Distance(cam.transform.position, cam_pos) > 0.001 && count > 0)
         {
+            --count;
             cam.transform.position = Vector3.Lerp(cam.transform.position, cam_pos, speed);
             yield return new WaitForSeconds(0.01f);
         }
+        cam.transform.position = cam_pos;
         yield return null;
     }
 }
