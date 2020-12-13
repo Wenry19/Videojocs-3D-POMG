@@ -34,7 +34,10 @@ public class GameManager : MonoBehaviour
         posCheckPointCam = new Vector3(0f, 0f, -10f);
     }
 
-
+    public void stopMusic()
+    {
+        am.stopMusic();
+    }
     public void playSound(string s)
     {
         am.playSound(s);

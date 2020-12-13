@@ -49,6 +49,10 @@ public class AudioManager : MonoBehaviour
         musicAS.Play();
     }
 
+    public void stopMusic()
+    {
+        musicAS.Stop();
+    }
     public void playSound(string s)
     {
         soundsAS.PlayOneShot(sounds[s]);
