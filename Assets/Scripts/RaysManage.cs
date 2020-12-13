@@ -19,6 +19,7 @@ public class RaysManage : MonoBehaviour
 
     public float hit_dist;
     public float hit_dist_esq;
+    bool switch_activated;
 
     // Start is called before the first frame update
     void Start()
@@ -55,10 +56,16 @@ public class RaysManage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        switch_activated = false;
         checkCollUp();
         checkCollDown();
         checkCollLeft();
         checkCollRight();
+
+        //checkCollLeftUp();
+        //checkCollRightUp();
+        //checkCollLeftDown();
+        //checkCollRightDown();
     }
 
     void checkCollUp()
@@ -74,8 +81,9 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision") {
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated) {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("up");
                     pm.collis(0);
@@ -98,9 +106,10 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision")
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated)
                     {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("down");
                     pm.collis(1);
@@ -122,9 +131,10 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision")
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated)
                     {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("right");
                     pm.collis(2);
@@ -147,9 +157,10 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision")
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated)
                     {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("left");
                     pm.collis(3);
@@ -173,9 +184,10 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision")
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated)
                     {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("left");
                     pm.collis(0);
@@ -198,9 +210,10 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision")
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated)
                     {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("left");
                     pm.collis(0);
@@ -224,9 +237,10 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision")
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated)
                     {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("left");
                     pm.collis(1);
@@ -250,13 +264,15 @@ public class RaysManage : MonoBehaviour
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
-                    if (hit.collider.CompareTag("Switch") && hit.collider.name == "ActivateCollision")
+                    if (hit.collider.CompareTag("Switch") && hit.collider.name[0] == 'A' && !switch_activated)
                     {
                         hit.collider.GetComponentInParent<ButtonActivation>().collisionButton();
+                        switch_activated = true;
                     }
                     //print("left");
                     pm.collis(1);
                     pm.collis(2);
+
                     break;
                 }
             }
