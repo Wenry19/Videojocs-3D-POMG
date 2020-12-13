@@ -77,9 +77,8 @@ public class AvisarColision : MonoBehaviour
         player.GetComponent<MeshRenderer>().enabled = false;
         player.GetComponent<PlayerMoves>().enabled = false;
         player.GetComponent<PlayerAnimations>().enabled = false;
-        player.GetComponent<RaysManage>().enabled = false;
 
-        GameObject particles = player.transform.GetChild(2).gameObject;
+        GameObject particles = player.transform.GetChild(14).gameObject;
         particles.SetActive(true);
         yield return new WaitForSeconds(2);
         particles.SetActive(false);

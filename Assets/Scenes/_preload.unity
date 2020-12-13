@@ -800,6 +800,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4659d6cb5f006684eb0cc0d99e9b4d13, type: 3}
   - {fileID: 8300000, guid: 57e3044b48baf1049ada97d25f986d5c, type: 3}
   - {fileID: 8300000, guid: 07846e4de85ccfe48a6c669525349143, type: 3}
+  - {fileID: 8300000, guid: 2504b8976f973e449b9a13e816862bc1, type: 3}
   colliSounds:
   - {fileID: 8300000, guid: 6de5cb8b5b7dc934f8f361040114bf03, type: 3}
   - {fileID: 8300000, guid: ce4230546a96f494eb09b661ff47879d, type: 3}

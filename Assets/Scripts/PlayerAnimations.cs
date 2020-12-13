@@ -37,10 +37,10 @@ public class PlayerAnimations : MonoBehaviour
         int aux = 0;
 
 
-        if (pm.isUp() && pm.isRight()) aux = 1;
-        else if (!pm.isUp() && !pm.isRight()) aux = 1;
-        else if (pm.isUp()  && !pm.isRight()) aux = -1;
-        else if (!pm.isUp() && pm.isRight()) aux = -1;
+        if (pm.isUp() && pm.isRight()) aux = -1;
+        else if (!pm.isUp() && !pm.isRight()) aux = -1;
+        else if (pm.isUp()  && !pm.isRight()) aux = 1;
+        else if (!pm.isUp() && pm.isRight()) aux = 1;
 
         while (count < 4 && animationPlayer)
         {

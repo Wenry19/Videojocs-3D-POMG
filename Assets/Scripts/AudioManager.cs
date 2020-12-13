@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour
         sounds["WinLevel"] = soundsArray[6];
         sounds["WinGame"] = soundsArray[7];
         sounds["GameOver"] = soundsArray[8];
+        sounds["Switch"] = soundsArray[9];
 
 
         ropeAS.clip = sounds["Rope"];
@@ -71,7 +72,10 @@ public class AudioManager : MonoBehaviour
     {
         ropeAS.Stop();
     }
-
+    public void stopSound()
+    {
+        soundsAS.Stop();
+    }
     // Update is called once per frame
     void Update()
     {

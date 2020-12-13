@@ -22,9 +22,8 @@ public class ButtonActivation : MonoBehaviour
 
     public void collisionButton()
     {
-        Debug.Log(colliders);
-        Debug.Log(doors);
         manageDoor();
+        GameManager.Instance.playSound("Switch");
         if (activate)
         {
             transform.rotation = Quaternion.Euler(90.0f, 180.0f, -90.0f);

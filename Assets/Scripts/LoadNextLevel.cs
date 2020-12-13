@@ -23,7 +23,6 @@ public class LoadNextLevel : MonoBehaviour
 
             player.GetComponent<PlayerMoves>().enabled = false;
             player.GetComponent<PlayerAnimations>().enabled = false;
-            player.GetComponent<RaysManage>().enabled = false;
             
             player.GetComponent<WinAnimation>().win(transform.position);
 

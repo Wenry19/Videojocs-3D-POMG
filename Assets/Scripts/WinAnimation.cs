@@ -19,7 +19,9 @@ public class WinAnimation : MonoBehaviour
     {
 
         transform.position = pos;
+        GameManager.Instance.stopSound();
         GameManager.Instance.playSound("WinLevel");
+
         GameManager.Instance.stopMusic();
         StartCoroutine("won");
     }

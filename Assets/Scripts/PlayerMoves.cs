@@ -17,11 +17,16 @@ public class PlayerMoves : MonoBehaviour
 
     //bool coliarri, coliabajo, colider, coliizqu;
     Rigidbody rb;
+
+    private void Awake()
+    {
+        GameManager.Instance.setPlayer(gameObject);
+
+    }
     // Start is called before the first frame update
     void Start()
     {
         player_state = state.INI;
-        GameManager.Instance.setPlayer(gameObject);
         transform.position = GameManager.Instance.getCheckPointPosition();
     }
     public void collis(int col)

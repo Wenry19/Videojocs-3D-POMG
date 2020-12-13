@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
     }
     public void levelVisTransition()
     {
-        print(firstTimeInLevel);
         if (firstTimeInLevel)
         {
             cam = Camera.main.gameObject;
@@ -52,7 +51,15 @@ public class GameManager : MonoBehaviour
         cam.transform.position = posFirstCamera;
         Vector3 finalPos = new Vector3(0, 0, -10f);
         float speed = 0.1f;
-        yield return new WaitForSeconds(2f);
+
+        player.GetComponent<PlayerMoves>().enabled = false;
+        player.GetComponent<PlayerAnimations>().enabled = false;
+
+        yield return new WaitForSeconds(3f);
+
+        player.GetComponent<PlayerMoves>().enabled = true;
+        player.GetComponent<PlayerAnimations>().enabled = true;
+        player.GetComponent<RaysManage>().enabled = true;
 
         while (Vector3.Distance(cam.transform.position, finalPos) > 0.001)
         {
@@ -102,7 +109,6 @@ public class GameManager : MonoBehaviour
         player.GetComponent<MeshRenderer>().enabled = true;
         player.GetComponent<PlayerMoves>().enabled = true;
         player.GetComponent<PlayerAnimations>().enabled = true;
-        player.GetComponent<RaysManage>().enabled = true;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
@@ -116,6 +122,10 @@ public class GameManager : MonoBehaviour
 
     public void setCam(GameObject c) {
         cam = c;
+    }
+    public void stopSound()
+    {
+        am.stopSound();
     }
 
     public Vector3 getCheckPointPosition()
