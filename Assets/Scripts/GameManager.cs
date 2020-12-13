@@ -38,9 +38,11 @@ public class GameManager : MonoBehaviour
     }
     public void levelVisTransition()
     {
+        print(firstTimeInLevel);
         if (firstTimeInLevel)
         {
             cam = Camera.main.gameObject;
+            StopCoroutine("startVisTransition");
             StartCoroutine("startVisTransition");
         }
     }
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
         cam.transform.position = posFirstCamera;
         Vector3 finalPos = new Vector3(0, 0, -10f);
         float speed = 0.1f;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         while (Vector3.Distance(cam.transform.position, finalPos) > 0.001)
         {
@@ -126,6 +128,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void nextLevel() {
+        firstTimeInLevel = true;
         int i = SceneManager.GetActiveScene().buildIndex;
         am.nextLevel(i);
         SceneManager.LoadScene(i+1);
