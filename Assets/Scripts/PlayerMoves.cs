@@ -25,6 +25,8 @@ public class PlayerMoves : MonoBehaviour
     }
     public void collis(int col)
     {
+        GameManager.Instance.playColli();
+        transform.GetComponent<PlayerAnimations>().callCollisionAnimation();
         if (col == 0)
         {
             arriba = false;

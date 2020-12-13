@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1043447335401824088}
   m_Layer: 0
   m_Name: Switch
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393911442508216319}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0.50000006, y: 0.50000006, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 3.102, y: -4.37, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 4810769811818875682}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: -90.00001}
 --- !u!33 &2859745571185064264
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doors: []
+  colliders: []
+  enemies:
+  - {fileID: 0}
 --- !u!1 &1754301144738497517
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +112,7 @@ GameObject:
   - component: {fileID: 2649879580037566993}
   m_Layer: 0
   m_Name: ActivateCollision
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +139,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754301144738497517}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03545922, y: 0.050201107, z: 0.04313145}
@@ -148,7 +151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754301144738497517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8daafc5df80076f4c93ea48e3b68890f, type: 3}
   m_Name: 
@@ -197,8 +200,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2609417, y: 5.77147, z: 1}
-  m_Center: {x: 0.061035804, y: 1.3642672, z: -0.00000016990933}
+  m_Size: {x: 2.2609417, y: 8.383294, z: 1}
+  m_Center: {x: 0.061035648, y: 0.058366314, z: -0.00000001423382}
 --- !u!114 &1036056279170367303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,8 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e5552f1446c61459800a178822e39d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num_doors: 10
   doors: []
+  colliders: []
 --- !u!54 &648638424743683357
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -241,7 +244,7 @@ GameObject:
   - component: {fileID: 3604697627131075141}
   m_Layer: 0
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
