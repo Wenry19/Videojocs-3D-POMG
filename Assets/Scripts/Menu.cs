@@ -36,6 +36,7 @@ public class Menu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButton(0) && timer<=0))
             {
+                GameManager.Instance.stopSound();
                 GameManager.Instance.playSound("Teclas");
                 Bg.GetComponent<SpriteRenderer>().color = Color.white;
                 creditsScreen.SetActive(false);
@@ -44,27 +45,33 @@ public class Menu : MonoBehaviour
                 inMenu = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        if (inMenu)
         {
-            GameManager.Instance.playSound("Teclas");
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                GameManager.Instance.stopSound();
+                GameManager.Instance.playSound("Teclas");
 
-            currentOption--;
-            if (currentOption < 0) currentOption = 3;
+                currentOption--;
+                if (currentOption < 0) currentOption = 3;
 
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                GameManager.Instance.stopSound();
+                GameManager.Instance.playSound("Teclas");
+
+                currentOption = (currentOption + 1) % 4;
+            }
+
+            updateOptions();
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-        {
-            GameManager.Instance.playSound("Teclas");
-
-            currentOption = (currentOption + 1) % 4;
-        }
-        
-        updateOptions();
     }
     public void changeToMouse(int i)
     {
         if (i != currentOption)
         {
+            GameManager.Instance.stopSound();
             GameManager.Instance.playSound("Teclas");
         }
         currentOption = i;
@@ -81,6 +88,7 @@ public class Menu : MonoBehaviour
     public void buttonClicked()
     {
         Color grey = new Color(0.5f, 0.5f, 0.5f);
+        GameManager.Instance.stopSound();
         GameManager.Instance.playSound("Teclas");
         switch (currentOption)
         {
