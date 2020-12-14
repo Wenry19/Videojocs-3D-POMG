@@ -150,5 +150,8 @@ public class GameManager : MonoBehaviour
         {
             goCheckPoint();
         }
+        if (Input.GetKeyDown(KeyCode.N)) {
+            nextLevel();
+        }
     }
 }
