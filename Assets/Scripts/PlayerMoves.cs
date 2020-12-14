@@ -69,7 +69,7 @@ public class PlayerMoves : MonoBehaviour
             else movX = -speedY * time;
 
             transform.position = new Vector3(transform.position.x + movX, transform.position.y + movY, 0);
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 GameManager.Instance.playSound("Space");
                 arriba = !arriba;
@@ -95,7 +95,7 @@ public class PlayerMoves : MonoBehaviour
                     movY = (-speedY - movAdicional) * time;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 GameManager.Instance.playSound("Space");
                 if (horizontal_rope)

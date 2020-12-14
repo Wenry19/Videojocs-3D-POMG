@@ -149,12 +149,12 @@ TextMesh:
   m_GameObject: {fileID: 40353988}
   m_Text: POMG
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.24
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 30
+  m_FontSize: 138
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -308,6 +308,8 @@ GameObject:
   - component: {fileID: 74561401}
   - component: {fileID: 74561403}
   - component: {fileID: 74561402}
+  - component: {fileID: 74561404}
+  - component: {fileID: 74561405}
   m_Layer: 0
   m_Name: Credits
   m_TagString: Untagged
@@ -339,12 +341,12 @@ TextMesh:
   m_GameObject: {fileID: 74561400}
   m_Text: Credits
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.24
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 18
+  m_FontSize: 75
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -390,6 +392,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &74561404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74561400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51517cedfdb41f644bbb0b1ce38255a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 866045702}
+--- !u!65 &74561405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74561400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.2, y: 1.8755859, z: 0}
+  m_Center: {x: 0, y: -0.93779296, z: 0}
 --- !u!1 &110705631
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +733,8 @@ GameObject:
   - component: {fileID: 387266529}
   - component: {fileID: 387266531}
   - component: {fileID: 387266530}
+  - component: {fileID: 387266533}
+  - component: {fileID: 387266532}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -736,12 +766,12 @@ TextMesh:
   m_GameObject: {fileID: 387266528}
   m_Text: Play
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.24
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 18
+  m_FontSize: 75
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -787,6 +817,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &387266532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387266528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b51c288e506a3c449df3072f029fcf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 866045702}
+--- !u!65 &387266533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387266528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.915764, y: 1.8755859, z: 0}
+  m_Center: {x: 0.14495802, y: -0.93779296, z: 0}
 --- !u!1 &394464114
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +854,8 @@ GameObject:
   - component: {fileID: 394464115}
   - component: {fileID: 394464117}
   - component: {fileID: 394464116}
+  - component: {fileID: 394464118}
+  - component: {fileID: 394464119}
   m_Layer: 0
   m_Name: Quit
   m_TagString: Untagged
@@ -829,12 +887,12 @@ TextMesh:
   m_GameObject: {fileID: 394464114}
   m_Text: Quit
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.24
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 18
+  m_FontSize: 75
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -880,6 +938,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &394464118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394464114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75cdae63865e8c4eaa3e2dd8af1a759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 866045702}
+--- !u!65 &394464119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394464114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.3, y: 1.8755859, z: 0}
+  m_Center: {x: 0, y: -0.93779296, z: 0}
 --- !u!1001 &438965143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1111,12 +1195,12 @@ TextMesh:
     spikes, it will cost you a life if you hit them.\nAnd finally to finidh the level,
     pick the last shiny checkpoint."
   m_OffsetZ: 0
-  m_CharacterSize: 0.24
+  m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 20
+  m_FontSize: 23
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -1801,7 +1885,7 @@ TextMesh:
   m_GameObject: {fileID: 1047119785}
   m_Text: Press space to go back
   m_OffsetZ: 0
-  m_CharacterSize: 0.24
+  m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -1987,12 +2071,12 @@ TextMesh:
   m_Text: "This tribute was developed by \nRodrigo Arian Huapaya sierra\nEnric Lamarca
     Ferres\nwho are students at Fib-UPC."
   m_OffsetZ: 0
-  m_CharacterSize: 0.24
+  m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 24
+  m_FontSize: 30
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -2080,12 +2164,12 @@ TextMesh:
   m_GameObject: {fileID: 1283393177}
   m_Text: credits
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.24
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 15
+  m_FontSize: 78
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -2173,7 +2257,7 @@ TextMesh:
   m_GameObject: {fileID: 1432390393}
   m_Text: Press space to go back
   m_OffsetZ: 0
-  m_CharacterSize: 0.24
+  m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -2368,12 +2452,12 @@ TextMesh:
   m_Text: "This game is a tribute to the original game POMG, \nwhich is in current 
     development by \n@wombatstuff (on Twitter) and will be \navailable on Steam."
   m_OffsetZ: 0
-  m_CharacterSize: 0.24
+  m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 24
+  m_FontSize: 29
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -2665,6 +2749,8 @@ GameObject:
   - component: {fileID: 1897522234}
   - component: {fileID: 1897522236}
   - component: {fileID: 1897522235}
+  - component: {fileID: 1897522237}
+  - component: {fileID: 1897522238}
   m_Layer: 0
   m_Name: Info
   m_TagString: Untagged
@@ -2696,12 +2782,12 @@ TextMesh:
   m_GameObject: {fileID: 1897522233}
   m_Text: Info
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.24
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 18
+  m_FontSize: 75
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
@@ -2747,6 +2833,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1897522237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897522233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02257ef1bc54a1439e046f469afce56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 866045702}
+--- !u!65 &1897522238
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897522233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.3, y: 1.8755859, z: 0}
+  m_Center: {x: 0, y: -0.93779296, z: 0}
 --- !u!1 &2047006490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,12 +2901,12 @@ TextMesh:
   m_GameObject: {fileID: 2047006490}
   m_Text: Info
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.24
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 30
+  m_FontSize: 128
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
