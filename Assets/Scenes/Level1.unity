@@ -6173,6 +6173,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrailButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3838848169014985916, guid: b4de48ef7c4da3b4990910986c4916b5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60e0a6d2319a1144d984ef368f9413f2, type: 2}
     - target: {fileID: 3838848169014985918, guid: b4de48ef7c4da3b4990910986c4916b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7884,12 +7889,12 @@ PrefabInstance:
     - target: {fileID: 8354678395743674633, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.18
+      value: 91.6
       objectReference: {fileID: 0}
     - target: {fileID: 8354678395743674633, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 8354678395743674633, guid: 3e4c7c04eccadba4ba52c0c949096249,
         type: 3}
@@ -8864,8 +8869,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.8396226, g: 0.32872015, b: 0.7135736, a: 1}
+      key1: {r: 0.9056604, g: 0.5767177, b: 0.6985483, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
