@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     public GameObject menuScreen;
     public GameObject infoScreen;
     public GameObject creditsScreen;
+    public GameObject Bg;
     bool inMenu;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class Menu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Color grey = new Color(0.5f, 0.5f, 0.5f);
                 GameManager.Instance.playSound("Teclas");
                 switch (currentOption)
                 {
@@ -32,11 +34,15 @@ public class Menu : MonoBehaviour
                         GameManager.Instance.nextLevel();
                         break;
                     case 1:
+                        Bg.GetComponent<SpriteRenderer>().color = grey;
+
                         menuScreen.SetActive(false);
                         infoScreen.SetActive(true);
                         inMenu = false;
                         break;
                     case 2:
+                        Bg.GetComponent<SpriteRenderer>().color = grey;
+
                         menuScreen.SetActive(false);
                         creditsScreen.SetActive(true);
                         inMenu = false;
@@ -49,7 +55,7 @@ public class Menu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 GameManager.Instance.playSound("Teclas");
-
+                Bg.GetComponent<SpriteRenderer>().color = Color.white;
                 creditsScreen.SetActive(false);
                 infoScreen.SetActive(false);
                 menuScreen.SetActive(true);
@@ -77,7 +83,7 @@ public class Menu : MonoBehaviour
     {
         for(int i = 0; i < options.Length; ++i)
         {
-            options[i].color = new Color(0, 0, 0, 1);
+            options[i].color = new Color(0.7058824f, 0.6235294f, 0.3294118f);
         }
         options[currentOption].color = new Color(1, 0, 0, 1);
     }

@@ -160,7 +160,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4283735988
 --- !u!23 &40353990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4283735988
 --- !u!23 &74561403
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -747,7 +747,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4283735988
 --- !u!23 &387266531
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -840,7 +840,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4283735988
 --- !u!23 &394464117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1122,7 +1122,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &840094687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1289,6 +1289,7 @@ MonoBehaviour:
   menuScreen: {fileID: 1466447389}
   infoScreen: {fileID: 1760658671}
   creditsScreen: {fileID: 110705631}
+  Bg: {fileID: 895569529}
 --- !u!4 &866045703
 Transform:
   m_ObjectHideFlags: 0
@@ -1359,7 +1360,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6a1003664a41a6b46828fc4cb50438cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd42755286a216c4487c77b362dc099b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1378,8 +1379,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895569529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.72}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.1, z: 10.72}
+  m_LocalScale: {x: 7.5915, y: 7.5915, z: 7.5915}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1618,7 +1619,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &966187476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1811,7 +1812,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4282006074
+    rgba: 4285746992
 --- !u!23 &1047119788
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1997,7 +1998,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &1097073755
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2090,7 +2091,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &1283393180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2183,7 +2184,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4282006074
+    rgba: 4285746992
 --- !u!23 &1432390396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2378,7 +2379,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &1628886940
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2706,7 +2707,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4283735988
 --- !u!23 &1897522236
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2758,7 +2759,7 @@ GameObject:
   - component: {fileID: 2047006493}
   - component: {fileID: 2047006492}
   m_Layer: 0
-  m_Name: Title (1)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2799,7 +2800,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 399f7fc2f2b466f4a9c0bf8a41247733, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &2047006493
 MeshRenderer:
   m_ObjectHideFlags: 0
