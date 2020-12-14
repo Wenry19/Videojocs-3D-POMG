@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 108510991}
   - component: {fileID: 108510990}
   - component: {fileID: 108510989}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: der
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -483,7 +483,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 165940766}
-  m_Layer: 0
+  - component: {fileID: 165940767}
+  m_Layer: 2
   m_Name: RaysLeftDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,13 +498,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165940765}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.562288, y: -31.537285, z: 36.807934}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1828146134}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165940767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165940765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dc97d03b236d24686fc97358dcc7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167040674
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +531,7 @@ GameObject:
   - component: {fileID: 167040678}
   - component: {fileID: 167040677}
   - component: {fileID: 167040676}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: izq
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -999,7 +1012,7 @@ PrefabInstance:
     - target: {fileID: 3468016058642366392, guid: eaece5ecd4faac24c9ca60351faa973d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.63
+      value: 4.55
       objectReference: {fileID: 0}
     - target: {fileID: 3468016058642366392, guid: eaece5ecd4faac24c9ca60351faa973d,
         type: 3}
@@ -1270,7 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492209199}
   - component: {fileID: 492209200}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RaysDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1543,7 +1556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 642153409}
   - component: {fileID: 642153410}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrailManagement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2126,7 +2139,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 909995424}
-  m_Layer: 0
+  - component: {fileID: 909995425}
+  m_Layer: 2
   m_Name: RaysRightDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2140,13 +2154,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909995423}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.562288, y: -31.537285, z: 36.807934}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1828146134}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909995425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909995423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dc97d03b236d24686fc97358dcc7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &922726386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2295,7 +2321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941857878}
   - component: {fileID: 941857879}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RaysLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,7 +2654,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093579943}
-  m_Layer: 0
+  - component: {fileID: 1093579944}
+  m_Layer: 2
   m_Name: RaysLeftUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2642,13 +2669,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093579942}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.562288, y: -31.537285, z: 36.807934}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1828146134}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1093579944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093579942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dc97d03b236d24686fc97358dcc7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1100343783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2798,7 +2837,7 @@ GameObject:
   - component: {fileID: 1135539384}
   - component: {fileID: 1135539386}
   - component: {fileID: 1135539385}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RopeDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3038,7 +3077,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1198375591}
-  m_Layer: 0
+  - component: {fileID: 1198375592}
+  m_Layer: 2
   m_Name: RaysRightUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3052,13 +3092,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198375590}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.562288, y: -31.537285, z: 36.807934}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1828146134}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1198375592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198375590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dc97d03b236d24686fc97358dcc7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1250440915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3221,7 +3273,7 @@ GameObject:
   - component: {fileID: 1352913843}
   - component: {fileID: 1352913842}
   - component: {fileID: 1352913841}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: down
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3318,7 +3370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372607766}
   - component: {fileID: 1372607767}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RaysUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3428,6 +3480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySpikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365161867400208679, guid: fa01f285b9a0460428390b16bf4bd215,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa01f285b9a0460428390b16bf4bd215, type: 3}
@@ -3737,7 +3794,7 @@ GameObject:
   - component: {fileID: 1528016940}
   - component: {fileID: 1528016939}
   - component: {fileID: 1528016938}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: up
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4213,7 +4270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1713952301}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4314,7 +4371,7 @@ GameObject:
   - component: {fileID: 1725655602}
   - component: {fileID: 1725655604}
   - component: {fileID: 1725655603}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9260,6 +9317,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9017236370540832997, guid: e3eb1ea433b825241af5d698720cb957,
         type: 3}
+    - target: {fileID: 3182419741042416608, guid: 15fcaae48bd27b5488405bb09fd3899f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4755264866919101954, guid: 15fcaae48bd27b5488405bb09fd3899f,
         type: 3}
       propertyPath: m_Name
@@ -9435,6 +9497,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9140191273231283167, guid: 3e4c7c04eccadba4ba52c0c949096249,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6327363676351424318, guid: 3e4c7c04eccadba4ba52c0c949096249, type: 3}
     - {fileID: 6327363676351424319, guid: 3e4c7c04eccadba4ba52c0c949096249, type: 3}
@@ -9464,7 +9531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit_dist: 0.05
-  hit_dist_esq: 0.02
+  hit_dist_esq: 0.05
 --- !u!114 &1828146136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9724,7 +9791,7 @@ PrefabInstance:
     - target: {fileID: 3468016058642366392, guid: eaece5ecd4faac24c9ca60351faa973d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.63
+      value: 4.55
       objectReference: {fileID: 0}
     - target: {fileID: 3468016058642366392, guid: eaece5ecd4faac24c9ca60351faa973d,
         type: 3}
@@ -9794,7 +9861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057566029}
   - component: {fileID: 2057566030}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RaysRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

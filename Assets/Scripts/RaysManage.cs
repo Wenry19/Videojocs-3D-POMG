@@ -20,6 +20,7 @@ public class RaysManage : MonoBehaviour
     public float hit_dist;
     public float hit_dist_esq;
     bool switch_activated;
+    bool col_cara;
 
     // Start is called before the first frame update
     void Start()
@@ -57,15 +58,19 @@ public class RaysManage : MonoBehaviour
     void Update()
     {
         switch_activated = false;
+        col_cara = false;
         checkCollUp();
         checkCollDown();
         checkCollLeft();
         checkCollRight();
 
-        //checkCollLeftUp();
-        //checkCollRightUp();
-        //checkCollLeftDown();
-        //checkCollRightDown();
+        if (!col_cara)
+        {
+            checkCollLeftUp();
+            checkCollRightUp();
+            checkCollLeftDown();
+            checkCollRightDown();
+        }
     }
 
     void checkCollUp()
@@ -77,7 +82,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysUp[i], out hit))
             {
                 //print("up_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -87,6 +92,7 @@ public class RaysManage : MonoBehaviour
                     }
                     //print("up");
                     pm.collis(0);
+                    col_cara = true;
                     break;
                 }
             }
@@ -102,7 +108,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysDown[i], out hit))
             {
                 //print("down_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -113,6 +119,7 @@ public class RaysManage : MonoBehaviour
                     }
                     //print("down");
                     pm.collis(1);
+                    col_cara = true;
                     break;
                 }
             }
@@ -127,7 +134,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysRight[i], out hit))
             {
                 //print("right_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -138,6 +145,7 @@ public class RaysManage : MonoBehaviour
                     }
                     //print("right");
                     pm.collis(2);
+                    col_cara = true;
                     break;
                 }
             }
@@ -153,7 +161,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysLeft[i], out hit))
             {
                 //print("left_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -164,6 +172,7 @@ public class RaysManage : MonoBehaviour
                     }
                     //print("left");
                     pm.collis(3);
+                    col_cara = true;
                     break;
                 }
             }
@@ -180,7 +189,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysLeftUp[i], out hit))
             {
                 //print("left_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -192,6 +201,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(0);
                     pm.collis(3);
+                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysLeftUp[i].origin);
                     break;
                 }
             }
@@ -206,7 +216,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysRightUp[i], out hit))
             {
                 //print("left_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -218,6 +228,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(0);
                     pm.collis(2);
+                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysRightUp[i].origin);
                     break;
                 }
             }
@@ -233,7 +244,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysLeftDown[i], out hit))
             {
                 //print("left_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -245,6 +256,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(1);
                     pm.collis(3);
+                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysLeftDown[i].origin);
                     break;
                 }
             }
@@ -260,7 +272,7 @@ public class RaysManage : MonoBehaviour
             if (Physics.Raycast(raysRightDown[i], out hit))
             {
                 //print("left_dist: " + hit.distance);
-                if ((Mathf.Abs(hit.distance) < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
+                if ((hit.distance < hit_dist_esq) && (hit.collider.CompareTag("Wall") || (hit.collider.CompareTag("Door") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     hit.collider.CompareTag("Switch") || (hit.collider.CompareTag("InviDoor") && hit.collider.name[0] != 'C' && hit.collider.gameObject.GetComponent<Renderer>().enabled) ||
                     (hit.collider.CompareTag("TrailDoor") && !pm.isTrailing())))
                 {
@@ -272,7 +284,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(1);
                     pm.collis(2);
-
+                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysRightDown[i].origin);
                     break;
                 }
             }
