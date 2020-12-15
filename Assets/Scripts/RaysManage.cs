@@ -201,7 +201,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(0);
                     pm.collis(3);
-                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysLeftUp[i].origin);
+                    //print(hit.collider.gameObject.name + hit.point + hit.distance + raysLeftUp[i].origin);
                     break;
                 }
             }
@@ -228,7 +228,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(0);
                     pm.collis(2);
-                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysRightUp[i].origin);
+                    //print(hit.collider.gameObject.name + hit.point + hit.distance + raysRightUp[i].origin);
                     break;
                 }
             }
@@ -256,7 +256,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(1);
                     pm.collis(3);
-                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysLeftDown[i].origin);
+                    //print(hit.collider.gameObject.name + hit.point + hit.distance + raysLeftDown[i].origin);
                     break;
                 }
             }
@@ -284,7 +284,7 @@ public class RaysManage : MonoBehaviour
                     //print("left");
                     pm.collis(1);
                     pm.collis(2);
-                    print(hit.collider.gameObject.name + hit.point + hit.distance + raysRightDown[i].origin);
+                    //print(hit.collider.gameObject.name + hit.point + hit.distance + raysRightDown[i].origin);
                     break;
                 }
             }
