@@ -140,6 +140,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void nextLevel() {
+        StopAllCoroutines();
         firstTimeInLevel = true;
         posCheckPoint = Vector3.zero;
         int i = SceneManager.GetActiveScene().buildIndex;
@@ -148,6 +149,7 @@ public class GameManager : MonoBehaviour
     }
     public void loadLevel(int i)
     {
+        StopAllCoroutines();
         am.nextLevel(i);
         firstTimeInLevel = true;
         posCheckPoint = Vector3.zero;
