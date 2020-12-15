@@ -2565,6 +2565,16 @@ PrefabInstance:
       propertyPath: speedY
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -1538403320687875063, guid: e27628aad964b0d4884915cd5c7340a1,
+        type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1538403320687875063, guid: e27628aad964b0d4884915cd5c7340a1,
+        type: 3}
+      propertyPath: distanceToChase
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5633498291813439241, guid: e27628aad964b0d4884915cd5c7340a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4049,6 +4059,16 @@ PrefabInstance:
         type: 3}
       propertyPath: primerSentido
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1538403320687875063, guid: e27628aad964b0d4884915cd5c7340a1,
+        type: 3}
+      propertyPath: distanceToChase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1538403320687875063, guid: e27628aad964b0d4884915cd5c7340a1,
+        type: 3}
+      propertyPath: type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5633498291813439241, guid: e27628aad964b0d4884915cd5c7340a1,
         type: 3}
@@ -9506,7 +9526,7 @@ PrefabInstance:
     - target: {fileID: 4365161867400208674, guid: a2e90c5ba5850b44a8555d9b31c9c200,
         type: 3}
       propertyPath: speedY
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4365161867400208675, guid: a2e90c5ba5850b44a8555d9b31c9c200,
         type: 3}
