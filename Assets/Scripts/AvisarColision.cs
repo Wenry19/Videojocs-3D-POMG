@@ -61,8 +61,7 @@ public class AvisarColision : MonoBehaviour
         if (coll.CompareTag("Spikes"))
         {
             GameManager.Instance.playSound("Explosion");
-            StartCoroutine("animacionMuerte");
-           
+            callAnimacionMuerte();           
         }
         else if (coll.CompareTag("CheckPoint"))
         {
@@ -71,12 +70,22 @@ public class AvisarColision : MonoBehaviour
             Destroy(coll.gameObject);
         }
     }
+    public void callAnimacionMuerte()
+    {
+        StartCoroutine("animacionMuerte");
+
+    }
     IEnumerator animacionMuerte()
     {
         GameObject player = transform.parent.gameObject;
         player.GetComponent<MeshRenderer>().enabled = false;
         player.GetComponent<PlayerMoves>().enabled = false;
         player.GetComponent<PlayerAnimations>().enabled = false;
+
+        player.transform.GetChild(2).GetComponent<BoxCollider>().enabled = false;
+        player.transform.GetChild(3).GetComponent<BoxCollider>().enabled = false;
+        player.transform.GetChild(4).GetComponent<BoxCollider>().enabled = false;
+        player.transform.GetChild(5).GetComponent<BoxCollider>().enabled = false;
 
         GameObject particles = player.transform.GetChild(14).gameObject;
         particles.SetActive(true);

@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 5168754690384002016}
   - component: {fileID: 8262851518260953237}
   - component: {fileID: -1538403320687875063}
+  - component: {fileID: 7440105636389851334}
   m_Layer: 0
   m_Name: Enemy 4
   m_TagString: Enemy
@@ -122,7 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1572e3eb91ece5846af0cdbff5d9aa36, type: 2}
+  - {fileID: 2100000, guid: e63b081da92088b4392b0524e0af87ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,3 +178,17 @@ MonoBehaviour:
   distanceToChase: 2
   speedInChase: 3
   primerSentido: 0
+--- !u!114 &7440105636389851334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679308395887578898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a90d52fcbbdc044b74e6d0d1f90e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 0.1
+  speedY: 0.2

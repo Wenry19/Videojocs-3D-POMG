@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     GameObject cam;
     AudioManager am;
     bool firstTimeInLevel;
+    bool godMode;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        godMode = false;
         firstTimeInLevel = true;
         am = GetComponent<AudioManager>();
         SceneManager.LoadScene(1);
@@ -153,5 +155,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N)) {
             nextLevel();
         }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (godMode) godMode = false;
+            else if (!godMode) godMode = true;
+            print(godMode);
+        }
+    }
+    public bool getGodMode()
+    {
+        return godMode;
     }
 }

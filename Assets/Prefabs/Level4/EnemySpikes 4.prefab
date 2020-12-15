@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4365161867400208678}
   - component: {fileID: 4365161867400208674}
   m_Layer: 0
-  m_Name: EnemySpikes
+  m_Name: EnemySpikes 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: 932d5a16dbdd12c4d90a92321d7193ca, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -282,7 +282,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: 932d5a16dbdd12c4d90a92321d7193ca, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -372,7 +372,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: 932d5a16dbdd12c4d90a92321d7193ca, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -462,7 +462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: 932d5a16dbdd12c4d90a92321d7193ca, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x

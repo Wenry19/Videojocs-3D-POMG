@@ -22,7 +22,8 @@ public class TriggerTrail : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && can_kill) {
-            //other.gameObject.transform.parent.gameObject.SetActive(false);
+            GameManager.Instance.playSound("Explosion");
+            other.gameObject.transform.parent.GetChild(2).GetComponent<AvisarColision>().callAnimacionMuerte();
         }
     }
 }
