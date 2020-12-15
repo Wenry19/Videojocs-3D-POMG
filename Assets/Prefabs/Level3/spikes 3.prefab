@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2039948625907513164}
   - component: {fileID: 1210082147899125527}
   m_Layer: 0
-  m_Name: spikes
+  m_Name: spikes 3
   m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+  - {fileID: 2100000, guid: 98708693fb356ed42827c87b4b0aa189, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
