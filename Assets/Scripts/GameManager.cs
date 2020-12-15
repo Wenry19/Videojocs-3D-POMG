@@ -146,6 +146,13 @@ public class GameManager : MonoBehaviour
         am.nextLevel(i);
         SceneManager.LoadScene(i+1);
     }
+    public void loadLevel(int i)
+    {
+        am.nextLevel(i);
+        firstTimeInLevel = true;
+        posCheckPoint = Vector3.zero;
+        SceneManager.LoadScene(i + 1); // preload, menu, level "1"...
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -157,9 +164,34 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if (godMode) godMode = false;
-            else if (!godMode) godMode = true;
-            print(godMode);
+            godMode = !godMode;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            loadLevel(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            loadLevel(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            loadLevel(3);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            loadLevel(4);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            loadLevel(5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            loadLevel(0);
         }
     }
     public bool getGodMode()

@@ -788,6 +788,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7e87e151609d09f4bb071864a60056ae, type: 3}
   - {fileID: 8300000, guid: 98e81f9b516af924eb6e92250af15853, type: 3}
   - {fileID: 8300000, guid: 3c429b84c45d5c345bd5e6fde675eb64, type: 3}
+  - {fileID: 8300000, guid: 57e3044b48baf1049ada97d25f986d5c, type: 3}
   soundsArray:
   - {fileID: 8300000, guid: 98a5cdaabb9f90b4fbe9e7adeef0eea3, type: 3}
   - {fileID: 8300000, guid: 0d91f4aad3d9dd947b78d0259a0be4ac, type: 3}

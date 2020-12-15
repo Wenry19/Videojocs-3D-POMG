@@ -49,6 +49,12 @@ public class AudioManager : MonoBehaviour
         musicAS.clip = music[i];
         musicAS.Play();
     }
+    public void loadLevel(int i)
+    {
+        musicAS.Stop();
+        musicAS.clip = music[i];
+        musicAS.Play();
+    }
 
     public void stopMusic()
     {
