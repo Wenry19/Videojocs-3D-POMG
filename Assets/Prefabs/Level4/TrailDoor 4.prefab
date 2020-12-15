@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9017236370540832995}
   - component: {fileID: 9017236370540832996}
   m_Layer: 0
-  m_Name: TrailDoor
+  m_Name: TrailDoor 4
   m_TagString: TrailDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 136ee23e7d6587243aa4f6bfa759355d, type: 2}
+  - {fileID: 2100000, guid: 655a4424c34264244819aa8d1e5ebd39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

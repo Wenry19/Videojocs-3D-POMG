@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2879416476828864020}
   - component: {fileID: 2879416476828864011}
   m_Layer: 0
-  m_Name: CheckPoint
+  m_Name: CheckPoint 4
   m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4710,8 +4710,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7da0873be8b256c46ad68b8772a2ca6d, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ba9ac9dd84e97824fb272e93b700ab0f, type: 2}
+  - {fileID: 2100000, guid: ba9ac9dd84e97824fb272e93b700ab0f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
