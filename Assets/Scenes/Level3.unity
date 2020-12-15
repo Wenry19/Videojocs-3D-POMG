@@ -11243,12 +11243,17 @@ PrefabInstance:
     - target: {fileID: -1538403320687875063, guid: e27628aad964b0d4884915cd5c7340a1,
         type: 3}
       propertyPath: distanceToChase
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1538403320687875063, guid: e27628aad964b0d4884915cd5c7340a1,
         type: 3}
       propertyPath: speedInChase
-      value: 6
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1538403320687875063, guid: e27628aad964b0d4884915cd5c7340a1,
+        type: 3}
+      propertyPath: speedX
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5633498291813439241, guid: e27628aad964b0d4884915cd5c7340a1,
         type: 3}
