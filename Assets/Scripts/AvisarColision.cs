@@ -58,8 +58,8 @@ public class AvisarColision : MonoBehaviour
     }
     void managePlayerLives(Collider coll)
     {
-        if (coll.CompareTag("Spikes"))
-        {
+        if (!GameManager.Instance.getGodMode() && coll.CompareTag("Spikes")) {
+        
             GameManager.Instance.playSound("Explosion");
             callAnimacionMuerte();           
         }
