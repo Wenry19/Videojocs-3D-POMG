@@ -9,7 +9,7 @@ public class TrailManagement : MonoBehaviour
     float timeToSpawn;
     GameObject parent;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         timeToSpawn = iniTimeToSpawn;
         parent = new GameObject("ParentOfTrailsObject");

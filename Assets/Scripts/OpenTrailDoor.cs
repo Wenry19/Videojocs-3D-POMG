@@ -26,6 +26,7 @@ public class OpenTrailDoor : MonoBehaviour
 
             traildoor.transform.parent.gameObject.SetActive(false); // El parent contiene todos los traildoors dels map
             trail_manag.SetActive(false);
+            player.GetComponent<TrailRenderer>().Clear();
             player.GetComponent<TrailRenderer>().enabled = false;
             Destroy(GameObject.FindGameObjectWithTag("ParentOfTrailsObject"));
         }
