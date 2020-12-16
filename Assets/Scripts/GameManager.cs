@@ -102,12 +102,14 @@ public class GameManager : MonoBehaviour
         am.playColli();
     }
 
-    public void setCheckPoint(Vector3 pos) {
+    public void setCheckPoint(Vector3 pos)
+    {
         posCheckPoint = pos;
         posCheckPointCam = Camera.main.transform.position;
     }
 
-    public void goCheckPoint() {
+    public void goCheckPoint()
+    {
         player.GetComponent<MeshRenderer>().enabled = true;
         player.GetComponent<PlayerMoves>().enabled = true;
         player.GetComponent<PlayerAnimations>().enabled = true;
@@ -118,11 +120,13 @@ public class GameManager : MonoBehaviour
         cam.transform.position = posCheckPointCam;
     }
 
-    public void setPlayer(GameObject p) {
+    public void setPlayer(GameObject p)
+    {
         player = p;
     }
 
-    public void setCam(GameObject c) {
+    public void setCam(GameObject c)
+    {
         cam = c;
     }
     public void stopSound()
@@ -139,10 +143,13 @@ public class GameManager : MonoBehaviour
         return posCheckPointCam;
     }
 
-    public void nextLevel() {
+    public void nextLevel()
+    {
         StopAllCoroutines();
         firstTimeInLevel = true;
+        posCheckPointCam = new Vector3(0f, 0f, -10f);
         posCheckPoint = Vector3.zero;
+
         int i = SceneManager.GetActiveScene().buildIndex;
         if (i == 7)
         {
@@ -158,6 +165,7 @@ public class GameManager : MonoBehaviour
     public void loadLevel(int i)
     {
         StopAllCoroutines();
+        posCheckPointCam = new Vector3(0f, 0f, -10f);
         am.nextLevel(i);
         firstTimeInLevel = true;
         posCheckPoint = Vector3.zero;
@@ -170,7 +178,8 @@ public class GameManager : MonoBehaviour
             stopRope();
             goCheckPoint();
         }
-        if (Input.GetKeyDown(KeyCode.N)) {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
             stopRope();
             nextLevel();
         }
