@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: -5271778800419740505}
   - component: {fileID: 700908150910778299}
   m_Layer: 0
-  m_Name: Map
+  m_Name: Map 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,11 +105,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 4900000, guid: 093aebddb4873a4488589655423d1d36, type: 3}
-  Wall: {fileID: 1632956379749862708, guid: 8cdf4029696431f4c829a6fe76dddae3, type: 3}
-  Door: {fileID: 7141740497531589912, guid: f3c37276d5aa1594fa60bb55d7c3e364, type: 3}
-  InvisibleDoor: {fileID: 6547868645652924915, guid: 7f5c94e064445a648bc850a54f48651b,
+  Wall: {fileID: 1632956379749862708, guid: 428088038c8f5a841825b48e164ef790, type: 3}
+  Door: {fileID: 7141740497531589912, guid: f25daa17d4a726a49bbb8270713bac60, type: 3}
+  InvisibleDoor: {fileID: 6547868645652924915, guid: e8642eca916efa2469c7185a6bf9ab92,
     type: 3}
-  TrailDoor: {fileID: 9017236370540832997, guid: 583de0734a3ae5a41b94fac939fb3d61,
+  TrailDoor: {fileID: 9017236370540832997, guid: 5f12b409e51fdf0438c7cdb9f24b4511,
     type: 3}
   colliderInferior: {fileID: 3208115663919502753, guid: b9292ea2de1f21b40b69874d86c2935d,
     type: 3}

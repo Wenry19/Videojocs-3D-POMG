@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 8262851518260953237}
   - component: {fileID: -1538403320687875063}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy 5
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6bee398fb6ed00741bbc58e586d25645, type: 2}
+  - {fileID: 2100000, guid: d473bb2261a8ade42ac89a727fa7bab2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -169,11 +169,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  speedX: 5
-  speedY: 0
+  speedX: 0
+  speedY: 3
   time: 0
   ini_pos: {x: 0, y: 0, z: 0}
-  horizontal: 1
+  horizontal: 0
   distanceToChase: 2
   speedInChase: 3
   primerSentido: 0
