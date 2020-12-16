@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerTrail : MonoBehaviour
 {
-    float timer = 1.0f;
+    float timer = 0.35f;
     bool can_kill = false;
     // Start is called before the first frame update
     void Start()
