@@ -144,8 +144,16 @@ public class GameManager : MonoBehaviour
         firstTimeInLevel = true;
         posCheckPoint = Vector3.zero;
         int i = SceneManager.GetActiveScene().buildIndex;
-        am.nextLevel(i);
-        SceneManager.LoadScene(i+1);
+        if (i == 7)
+        {
+            am.nextLevel(0);
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            am.nextLevel(i);
+            SceneManager.LoadScene(i + 1);
+        }
     }
     public void loadLevel(int i)
     {

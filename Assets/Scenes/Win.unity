@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1905815243}
+  pressSpace: {fileID: 511215261}
 --- !u!4 &378801013
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +316,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511215260}
-  m_Text: Press space or click to go back to menu
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
