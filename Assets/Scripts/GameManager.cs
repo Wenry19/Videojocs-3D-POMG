@@ -167,9 +167,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            stopRope();
             goCheckPoint();
         }
         if (Input.GetKeyDown(KeyCode.N)) {
+            stopRope();
             nextLevel();
         }
         if (Input.GetKeyDown(KeyCode.G))
@@ -201,6 +203,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
+            stopRope();
             loadLevel(0);
         }
 
