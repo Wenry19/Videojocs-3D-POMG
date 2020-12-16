@@ -109,6 +109,9 @@ public class Menu : MonoBehaviour
                 creditsScreen.SetActive(true);
                 inMenu = false;
                 break;
+            case 3:
+                Application.Quit();
+                break;
         }
     }
 }

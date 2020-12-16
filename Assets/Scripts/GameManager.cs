@@ -203,6 +203,11 @@ public class GameManager : MonoBehaviour
         {
             loadLevel(0);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
     public bool getGodMode()
     {
