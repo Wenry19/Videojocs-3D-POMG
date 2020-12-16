@@ -27,9 +27,40 @@ public class PlayerAnimations : MonoBehaviour
             {
                 StartCoroutine("jumpAnimation");
             }
+            else
+            {
+                StopCoroutine("ropeAnimation");
+                StartCoroutine("ropeAnimation");
+            }
         }
     }
+    IEnumerator ropeAnimation()
+    {
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        float rotation = 20;
+        Vector3 rotationVector = Vector3.zero;
+        if (pm.horizontal_rope) {
+            rotationVector.y = rotation;
+            if (pm.isRight()) rotationVector *= -1;
+        }
+        else
+        {
+            rotationVector.x = rotation;
+            if (pm.isUp()) rotationVector *= -1;
 
+        }
+        //Vector3 copyRotationVector = rotationVector;
+
+        int i = 0;
+        while(i < 9)
+        {
+            transform.Rotate(rotationVector);
+            yield return new WaitForSeconds(0.025f);
+            ++i;
+        }
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        yield return null;
+    }
     IEnumerator jumpAnimation()
     {
         animationPlayer = true;

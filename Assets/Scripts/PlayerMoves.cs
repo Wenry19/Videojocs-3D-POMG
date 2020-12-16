@@ -121,6 +121,11 @@ public class PlayerMoves : MonoBehaviour
         return derecha;
     }
 
+    public bool getHorizontalRope()
+    {
+        return horizontal_rope;
+    }
+
     public bool isUp()
     {
         return arriba;
