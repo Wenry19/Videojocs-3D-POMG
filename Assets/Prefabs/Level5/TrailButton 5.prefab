@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3838848169014985916}
   - component: {fileID: 3838848169014985859}
   - component: {fileID: 3838848169014985919}
+  - component: {fileID: -7290233434961388521}
   m_Layer: 0
-  m_Name: TrailButton
+  m_Name: TrailButton 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c63a1dfc3a91ee2498249354cae56b72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,3 +107,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec09d3f774e6c645bbed0f188a45472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7290233434961388521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838848169014985858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a90d52fcbbdc044b74e6d0d1f90e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 0.2
+  speedY: 0

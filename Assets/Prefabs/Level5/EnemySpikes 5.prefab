@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4365161867400208678}
   - component: {fileID: 4365161867400208674}
   m_Layer: 0
-  m_Name: EnemySpikes
+  m_Name: EnemySpikes 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6bee398fb6ed00741bbc58e586d25645, type: 2}
+  - {fileID: 2100000, guid: 773a502e0c264bc4d9d7b4ba76722493, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,7 +192,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: d1964081a20775049b9103d63f90d01b, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -282,7 +282,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: d1964081a20775049b9103d63f90d01b, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -372,7 +372,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: d1964081a20775049b9103d63f90d01b, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -462,7 +462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7b1047e69a9210c4e9e106f6a6130d1a, type: 2}
+      objectReference: {fileID: 2100000, guid: d1964081a20775049b9103d63f90d01b, type: 2}
     - target: {fileID: 3468016058642366392, guid: 9cf25ea392d5cfe4db75c6c3772b5920,
         type: 3}
       propertyPath: m_LocalPosition.x
